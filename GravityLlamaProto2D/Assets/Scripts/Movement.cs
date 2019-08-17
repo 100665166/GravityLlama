@@ -22,20 +22,20 @@
  * 
  * 
  * Attaches to:
- * Any object but should be the Player
+ * Player
  * 
  * 
  * Dependencies:
- * Gravity.cs
+ * GravityLevel.cs
  * 
  * 
  * Known issues:
  * - Player keeps sliding after moving left or right
- * - gravityLevel changes only take effect after jumping; should be handled elsewhere?
  * 
  * 
  * Changelog:
  * 17-08    Initial
+ * 17-08    Added gravityLevel for horizontal movement
  * 
  * =============================================================================
  */
@@ -73,6 +73,17 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        if (gm != null)
+        {
+            // Movement speeds affected by value in GameManager
+            rb.drag = gm.GetComponent<GravityLevel>().gravityLevel;
+        }
+        else
+        {
+            // Default to 0.0 if the GM doesn't exist for whatever reason
+            rb.drag = 0f;
+        }
+
         Move();
 
         // For jumping
@@ -108,16 +119,6 @@ public class Movement : MonoBehaviour
     // Returns: Nothing
     public void Jump()
     {
-        if (gm != null)
-        {
-            // Jump descent speed affected by value in GameManager
-            rb.drag = gm.GetComponent<GravityLevel>().gravityLevel;
-        }
-        else
-        {
-            // Default to 10.0 if the GM doesn't exist for whatever reason
-            rb.drag = 10f;
-        }
         rb.AddForce(Vector3.up * jumpSpeed);
     }
 }

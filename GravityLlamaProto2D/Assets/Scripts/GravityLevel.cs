@@ -14,7 +14,7 @@
  * 
  * 
  * Description:
- * Handles the level of 'gravity' in the scene
+ * Handles the amount of 'gravity' in the scene
  * 
  * 
  * Parameters:
@@ -42,5 +42,5 @@ using UnityEngine;
 public class GravityLevel : MonoBehaviour
 {
     [Tooltip("Float - Use this to determine how much gravity is currently within the scene. Be aware that too high or too low values can cause strange effects on RigidBody objects within the scene!")]
-    public float gravityLevel = 10f;
+    public float gravityLevel = 5f;
 }
