@@ -26,7 +26,7 @@
  * 
  * 
  * Known issues:
- * - Negative gravity levels can cause affect objects to clip through colliders
+ * - Negative gravity levels can cause affected objects to clip through colliders
  * 
  * 
  * Dependencies:
@@ -35,6 +35,7 @@
  * 
  * Changelog:
  * 20-08    Initial
+ * 21-08    Added validators to functions
  * 
  * =============================================================================
  */
@@ -78,7 +79,10 @@ public class AdjustGravity : MonoBehaviour
     // Returns: Nothing
     public void IncreaseGravity()
     {
-        gm.GetComponent<GravityLevel>().gravityLevel++;
+        if (gm != null)
+        {
+            gm.GetComponent<GravityLevel>().gravityLevel++;
+        }
     }
 
     // DecreaseGravity
@@ -87,6 +91,9 @@ public class AdjustGravity : MonoBehaviour
     // Returns: Nothing
     public void DecreaseGravity()
     {
-        gm.GetComponent<GravityLevel>().gravityLevel--;
+        if (gm != null)
+        {
+            gm.GetComponent<GravityLevel>().gravityLevel--;
+        }
     }
 }

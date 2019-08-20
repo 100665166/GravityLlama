@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\AdjustGravity.cs" />
     <Compile Include="Assets\Scripts\GravityLevel.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Pickup.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>J:/GitHub/test/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
