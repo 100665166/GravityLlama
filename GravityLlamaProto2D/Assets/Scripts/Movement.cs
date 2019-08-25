@@ -36,6 +36,7 @@
  * Changelog:
  * 17-08    Initial
  * 17-08    Added gravityLevel for horizontal movement
+ * 25-08    Increased default value for jumpSpeed (500f to 750f)
  * 
  * =============================================================================
  */
@@ -50,7 +51,7 @@ public class Movement : MonoBehaviour
     [Tooltip("Float - Adjusts how quickly the player moves left or right.")]
     public float movementSpeed = 1000f;
     [Tooltip("Float - Adjusts the jump height of the player (vertically).")]
-    public float jumpSpeed = 500f; // Technically not needed but we'll separate it for now
+    public float jumpSpeed = 750f; // Technically not needed but we'll separate it for now
 
     [HideInInspector]
     public Rigidbody rb;

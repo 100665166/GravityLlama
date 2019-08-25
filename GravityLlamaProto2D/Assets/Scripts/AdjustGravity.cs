@@ -36,6 +36,7 @@
  * Changelog:
  * 20-08    Initial
  * 21-08    Added validators to functions
+ * 25-08    Added validators to prevent unintended gravity settings
  * 
  * =============================================================================
  */
@@ -81,7 +82,11 @@ public class AdjustGravity : MonoBehaviour
     {
         if (gm != null)
         {
-            gm.GetComponent<GravityLevel>().gravityLevel++;
+            // Validator to prevent drag levels from getting overboard
+            if (gm.GetComponent<GravityLevel>().gravityLevel != 10)
+            {
+                gm.GetComponent<GravityLevel>().gravityLevel++;
+            }
         }
     }
 
@@ -93,7 +98,11 @@ public class AdjustGravity : MonoBehaviour
     {
         if (gm != null)
         {
-            gm.GetComponent<GravityLevel>().gravityLevel--;
+            // Ditto, but for negative values
+            if (gm.GetComponent<GravityLevel>().gravityLevel != 0)
+            {
+                gm.GetComponent<GravityLevel>().gravityLevel--;
+            }
         }
     }
 }
