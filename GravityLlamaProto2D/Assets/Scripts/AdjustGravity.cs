@@ -70,7 +70,7 @@ public class AdjustGravity : MonoBehaviour
         }
         catch (NullReferenceException)
         {
-            Debug.Log("No GameManager detected within the scene. Please add the prefab to the scene or create one and add GravityLevel.cs to it.");
+            Debug.Log("[ADJUSTGRAVITY.CS] No GameManager detected within the scene. Please add the prefab to the scene or create one and add GravityLevel.cs to it.");
         }
     }
 
