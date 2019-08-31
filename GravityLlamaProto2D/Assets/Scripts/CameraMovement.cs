@@ -32,15 +32,43 @@
  * 
  * Changelog:
  * 25-08    Initial placeholder script
+ * 31-08    Added functionality
  * 
  * =============================================================================
  */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    // Distance between the player and camera
+    private Vector3 offset;
 
+    [HideInInspector]
+    public GameObject player;
+
+    void Start()
+    {
+        try
+        {
+            player = GameObject.FindGameObjectWithTag("Player");    // Get the Llama
+            offset = transform.position - player.transform.position;
+        }
+        catch (NullReferenceException)
+        {
+            Debug.Log("[CAMERAMOVEMENT.CS] There's no player object in the scene! Please add one first before running this script.");
+        }
+    }
+
+    void Update()
+    {
+        if (player != null)
+        {
+            //Debug.Log("Camera is following " + player.name + " at: " + transform.position);
+            transform.position = player.transform.position + offset;
+        }
+    }
 }
