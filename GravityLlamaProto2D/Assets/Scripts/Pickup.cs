@@ -28,11 +28,13 @@
  * 
  * Dependencies:
  * AdjustGravity.cs
+ * ScoringSystem.cs
  * 
  * 
  * Changelog:
  * 21-08    Initial placeholder script
  * 29-08    Pickups now store an enum to denote their effect on gravity
+ * 31-08    Pickups can now add a score amount
  * 
  * =============================================================================
  */
@@ -79,12 +81,14 @@ public class Pickup : MonoBehaviour
                     if (gm != null)
                     {
                         gm.GetComponent<AdjustGravity>().DecreaseGravity();
+                        gm.GetComponent<ScoringSystem>().currentScore++;
                     }
                     break;
                 case AffectsGravity.Raise:
                     if (gm != null)
                     {
                         gm.GetComponent<AdjustGravity>().IncreaseGravity();
+                        gm.GetComponent<ScoringSystem>().currentScore++;
                     }
                     break;
                 default:
