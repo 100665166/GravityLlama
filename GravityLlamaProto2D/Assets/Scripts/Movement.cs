@@ -51,6 +51,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public enum MovementType
+    {
+        SideScroll, 
+        Waypoints
+    }
+
     private int waypointIndex = 0;  // Waypoint list index
 
     [Tooltip("Float - This value sets how fast the player will move automatically (it does not affect actual movement speed).")]
@@ -59,12 +65,14 @@ public class Movement : MonoBehaviour
     public float movementSpeed = 1000f;
     [Tooltip("Float - Adjusts the jump height of the player (vertically).")]
     public float jumpSpeed = 750f; // Technically not needed but we'll separate it for now
-    [Tooltip("Boolean - This flag changes whether the player will constantly move right via physics.")]
-    public bool constantMovement = true;    // For testing purposes
+    [Tooltip("Determines what movement system the player object will be using for this scene.\n\n[SideScroll] -> Select this option for stages that are exclusively in 2D i.e. Llama moves only on one axis.\n[Waypoints] -> Select this option for stages that have 2.5D environments.")]
+    public MovementType movementType = MovementType.SideScroll;
     [Tooltip("Boolean - Enables/disables the ability to chain jumps. If this flag is toggled, you can't jump again until you land on a surface.")]
     public bool disableChainJumps = true;
-    [Tooltip("Boolean - Use this for 2.5D scenes only. Requires you to define node paths for the player to follow.")]
-    public bool onRailsMovement = true;
+    //[Tooltip("Boolean - This flag changes whether the player will constantly move right via physics.")]
+    //public bool constantMovement = true;    // For testing purposes
+    //[Tooltip("Boolean - Use this for 2.5D scenes only. Requires you to define node paths for the player to follow.")]
+    //public bool onRailsMovement = true;
     [Tooltip("Transform - This is the list of nodes which the player will follow. Only use this for 2.5D scenes!")]
     public Transform[] waypoints;  // Waypoint list
 
@@ -126,7 +134,7 @@ public class Movement : MonoBehaviour
     // We want physics movement to be in FixedUpdate so that it isn't tied to the frame rate
     void FixedUpdate()
     {
-        if (constantMovement)
+        if (movementType == MovementType.SideScroll)
         {
             AlwaysMove();
         }
@@ -139,8 +147,18 @@ public class Movement : MonoBehaviour
     public void Move()
     {
         // Failsafe so that waypoints don't conflict with regular automovement
-        if (onRailsMovement && !constantMovement)
+        if (movementType == MovementType.Waypoints)
         {
+            // ======================================================================================
+            // ENABLES 3D MOVEMENT WHILE LLAMA IS ONRAILS
+            // ======================================================================================
+            float hdir = Input.GetAxisRaw("Horizontal");
+            float vdir = Input.GetAxisRaw("Vertical");
+            rb.AddForce(new Vector3(hdir, 0, vdir) * movementSpeed);
+            transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * movementSpeed, 0);   // Needs improvement!!!
+            // ======================================================================================
+            // ======================================================================================
+
             if (waypointIndex <= waypoints.Length - 1)
             {
                 // Move player from current waypoint to next one
@@ -199,11 +217,7 @@ public class Movement : MonoBehaviour
     // Returns: Nothing
     public void AlwaysMove()
     {
-        // Failsafe to prevent this option from being used in 2.5D scenes
-        if (!onRailsMovement)
-        {
-            Vector3 spd = new Vector3(crawlSpeed, 0, 0);
-            rb.AddForce(spd);
-        }
+        Vector3 spd = new Vector3(crawlSpeed, 0, 0);
+        rb.AddForce(spd);
     }
 }
