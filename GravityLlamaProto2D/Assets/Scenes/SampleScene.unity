@@ -1963,6 +1963,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 651585545074574777, guid: c3c675f99da29264eb3e77a609525c80,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761768631336420590, guid: c3c675f99da29264eb3e77a609525c80,
+        type: 3}
+      propertyPath: semi3DMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761768631336420590, guid: c3c675f99da29264eb3e77a609525c80,
+        type: 3}
+      propertyPath: onRailsMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761768631336420590, guid: c3c675f99da29264eb3e77a609525c80,
+        type: 3}
+      propertyPath: crawlSpeed
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c675f99da29264eb3e77a609525c80, type: 3}
 --- !u!1 &1534198620

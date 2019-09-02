@@ -33,6 +33,7 @@
  * Changelog:
  * 25-08    Initial placeholder script
  * 31-08    Added functionality
+ * 02-08    Supports following the player's rotation angle (NYI)
  * 
  * =============================================================================
  */
@@ -46,6 +47,8 @@ public class CameraMovement : MonoBehaviour
 {
     // Distance between the player and camera
     private Vector3 offset;
+    // Direction that player object is facing
+    private Transform heading;
 
     [HideInInspector]
     public GameObject player;
@@ -69,6 +72,9 @@ public class CameraMovement : MonoBehaviour
         {
             //Debug.Log("Camera is following " + player.name + " at: " + transform.position);
             transform.position = player.transform.position + offset;
+
+            //heading = player.transform;
+            //transform.rotation = heading.rotation;
         }
     }
 }

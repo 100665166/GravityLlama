@@ -31,6 +31,7 @@
  * 
  * Known issues:
  * - It is still possible to move backwards
+ * - Player's rotation does not adjust to face next waypoint (yet)
  * 
  * 
  * Changelog:
@@ -38,6 +39,7 @@
  * 17-08    Added gravityLevel for horizontal movement
  * 25-08    Increased default value for jumpSpeed (500f to 750f)
  * 31-08    Added constantMovement flag and behaviours
+ * 02-09    Added support for movement in 2.5D scenes
  * 
  * =============================================================================
  */
@@ -49,9 +51,10 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // This is for auto movement only
-    private readonly float crawlSpeed = 25f;
+    private int waypointIndex = 0;  // Waypoint list index
 
+    [Tooltip("Float - This value sets how fast the player will move automatically (it does not affect actual movement speed).")]
+    public float crawlSpeed = 25f;  // This is for auto movement only
     [Tooltip("Float - Adjusts how quickly the player moves left or right.")]
     public float movementSpeed = 1000f;
     [Tooltip("Float - Adjusts the jump height of the player (vertically).")]
@@ -60,6 +63,10 @@ public class Movement : MonoBehaviour
     public bool constantMovement = true;    // For testing purposes
     [Tooltip("Boolean - Enables/disables the ability to chain jumps. If this flag is toggled, you can't jump again until you land on a surface.")]
     public bool disableChainJumps = true;
+    [Tooltip("Boolean - Use this for 2.5D scenes only. Requires you to define node paths for the player to follow.")]
+    public bool onRailsMovement = true;
+    [Tooltip("Transform - This is the list of nodes which the player will follow. Only use this for 2.5D scenes!")]
+    public Transform[] waypoints;  // Waypoint list
 
     [HideInInspector]
     public GameObject player;
@@ -82,6 +89,12 @@ public class Movement : MonoBehaviour
             Debug.Log("[MOVEMENT.CS] No GameManager detected within the scene. Please add the prefab to the scene or create one and add GravityLevel.cs to it.");
             Debug.Log("[MOVEMENT.CS] There's no player object in the scene! Please add one first before running this script.");
         }
+
+        // Need to set position of player onto first waypoint if we're using on-rails movement
+        /*if (onRailsMovement && player != null)
+        {
+            transform.position = waypoints[waypointIndex].transform.position;
+        }*/
     }
 
     void Update()
@@ -102,7 +115,6 @@ public class Movement : MonoBehaviour
 
         // Always check every frame BEFORE Jump validation to take place
         // to see if we're on a flat surface (use the "TerrainWall" tag for such objects)
-
 
         // For jumping (only works if the llama is on a flat surface)
         if (Input.GetKeyDown(KeyCode.Space))
@@ -126,18 +138,36 @@ public class Movement : MonoBehaviour
     // Returns: Nothing
     public void Move()
     {
-        // Grab horizontal input (support for gamepads, etc.)
-        float hdir = Input.GetAxisRaw("Horizontal");
+        // Failsafe so that waypoints don't conflict with regular automovement
+        if (onRailsMovement && !constantMovement)
+        {
+            if (waypointIndex <= waypoints.Length - 1)
+            {
+                // Move player from current waypoint to next one
+                transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, crawlSpeed * Time.deltaTime);
 
-        // Grab direction of Vector; we don't care about other axes
-        Vector3 vectDir = new Vector3(hdir, 0, 0);
-        // Normalise it
-        Vector3 vectUnit = vectDir.normalized;
-        // Grab existing speed of RigidBody and multipler it based on value of movementSpeed
-        Vector3 vectForce = vectUnit * movementSpeed * Time.deltaTime;
+                // Cycle to next index of waypoint path if the player reaches one of the points
+                if (transform.position == waypoints[waypointIndex].transform.position)
+                {
+                    waypointIndex++;
+                }
+            }
+        }
+        else
+        {
+            // Grab horizontal input (support for gamepads, etc.)
+            float hdir = Input.GetAxisRaw("Horizontal");
 
-        // Apply force to the player's object
-        rb.AddForce(vectForce);
+            // Grab direction of Vector; we don't care about other axes
+            Vector3 vectDir = new Vector3(hdir, 0, 0);
+            // Normalise it
+            Vector3 vectUnit = vectDir.normalized;
+            // Grab existing speed of RigidBody and multipler it based on value of movementSpeed
+            Vector3 vectForce = vectUnit * movementSpeed * Time.deltaTime;
+
+            // Apply force to the player's object
+            rb.AddForce(vectForce);
+        }
     }
 
     // Jump
@@ -169,7 +199,11 @@ public class Movement : MonoBehaviour
     // Returns: Nothing
     public void AlwaysMove()
     {
-        Vector3 spd = new Vector3(crawlSpeed, 0, 0);
-        rb.AddForce(spd);
+        // Failsafe to prevent this option from being used in 2.5D scenes
+        if (!onRailsMovement)
+        {
+            Vector3 spd = new Vector3(crawlSpeed, 0, 0);
+            rb.AddForce(spd);
+        }
     }
 }
