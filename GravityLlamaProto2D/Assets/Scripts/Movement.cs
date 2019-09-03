@@ -30,13 +30,16 @@
  * 
  * 
  * Known issues:
- * - Player keeps sliding after moving left or right
+ * - It is still possible to move backwards
+ * - Player's rotation does not adjust to face next waypoint (yet)
  * 
  * 
  * Changelog:
  * 17-08    Initial
  * 17-08    Added gravityLevel for horizontal movement
  * 25-08    Increased default value for jumpSpeed (500f to 750f)
+ * 31-08    Added constantMovement flag and behaviours
+ * 02-09    Added support for movement in 2.5D scenes
  * 
  * =============================================================================
  */
@@ -48,11 +51,33 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public enum MovementType
+    {
+        SideScroll, 
+        Waypoints
+    }
+
+    private int waypointIndex = 0;  // Waypoint list index
+
+    [Tooltip("Float - This value sets how fast the player will move automatically (it does not affect actual movement speed).")]
+    public float crawlSpeed = 25f;  // This is for auto movement only
     [Tooltip("Float - Adjusts how quickly the player moves left or right.")]
     public float movementSpeed = 1000f;
     [Tooltip("Float - Adjusts the jump height of the player (vertically).")]
     public float jumpSpeed = 750f; // Technically not needed but we'll separate it for now
+    [Tooltip("Determines what movement system the player object will be using for this scene.\n\n[SideScroll] -> Select this option for stages that are exclusively in 2D i.e. Llama moves only on one axis.\n[Waypoints] -> Select this option for stages that have 2.5D environments.")]
+    public MovementType movementType = MovementType.SideScroll;
+    [Tooltip("Boolean - Enables/disables the ability to chain jumps. If this flag is toggled, you can't jump again until you land on a surface.")]
+    public bool disableChainJumps = true;
+    //[Tooltip("Boolean - This flag changes whether the player will constantly move right via physics.")]
+    //public bool constantMovement = true;    // For testing purposes
+    //[Tooltip("Boolean - Use this for 2.5D scenes only. Requires you to define node paths for the player to follow.")]
+    //public bool onRailsMovement = true;
+    [Tooltip("Transform - This is the list of nodes which the player will follow. Only use this for 2.5D scenes!")]
+    public Transform[] waypoints;  // Waypoint list
 
+    [HideInInspector]
+    public GameObject player;
     [HideInInspector]
     public Rigidbody rb;
     [HideInInspector]
@@ -65,11 +90,19 @@ public class Movement : MonoBehaviour
         try
         {
             gm = GameObject.FindGameObjectWithTag("EditorOnly");    // For the GameManager object
+            player = GameObject.FindGameObjectWithTag("Player");    // For the llama
         }
         catch (NullReferenceException)
         {
-            Debug.Log("No GameManager detected within the scene. Please add the prefab to the scene or create one and add GravityLevel.cs to it.");
+            Debug.Log("[MOVEMENT.CS] No GameManager detected within the scene. Please add the prefab to the scene or create one and add GravityLevel.cs to it.");
+            Debug.Log("[MOVEMENT.CS] There's no player object in the scene! Please add one first before running this script.");
         }
+
+        // Need to set position of player onto first waypoint if we're using on-rails movement
+        /*if (onRailsMovement && player != null)
+        {
+            transform.position = waypoints[waypointIndex].transform.position;
+        }*/
     }
 
     void Update()
@@ -85,12 +118,25 @@ public class Movement : MonoBehaviour
             rb.drag = 0f;
         }
 
+        // General input
         Move();
 
-        // For jumping
+        // Always check every frame BEFORE Jump validation to take place
+        // to see if we're on a flat surface (use the "TerrainWall" tag for such objects)
+
+        // For jumping (only works if the llama is on a flat surface)
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+        }
+    }
+
+    // We want physics movement to be in FixedUpdate so that it isn't tied to the frame rate
+    void FixedUpdate()
+    {
+        if (movementType == MovementType.SideScroll)
+        {
+            AlwaysMove();
         }
     }
 
@@ -100,18 +146,46 @@ public class Movement : MonoBehaviour
     // Returns: Nothing
     public void Move()
     {
-        // Grab horizontal input (support for gamepads, etc.)
-        float hdir = Input.GetAxisRaw("Horizontal");
+        // Failsafe so that waypoints don't conflict with regular automovement
+        if (movementType == MovementType.Waypoints)
+        {
+            // ======================================================================================
+            // ENABLES 3D MOVEMENT WHILE LLAMA IS ONRAILS
+            // ======================================================================================
+            float hdir = Input.GetAxisRaw("Horizontal");
+            float vdir = Input.GetAxisRaw("Vertical");
+            rb.AddForce(new Vector3(hdir, 0, vdir) * movementSpeed);
+            transform.Rotate(0, Input.GetAxis("Horizontal") * Time.deltaTime * movementSpeed, 0);   // Needs improvement!!!
+            // ======================================================================================
+            // ======================================================================================
 
-        // Grab direction of Vector; we don't care about other axes
-        Vector3 vectDir = new Vector3(hdir, 0, 0);
-        // Normalise it
-        Vector3 vectUnit = vectDir.normalized;
-        // Grab existing speed of RigidBody and multipler it based on value of movementSpeed
-        Vector3 vectForce = vectUnit * movementSpeed * Time.deltaTime;
+            if (waypointIndex <= waypoints.Length - 1)
+            {
+                // Move player from current waypoint to next one
+                transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, crawlSpeed * Time.deltaTime);
 
-        // Apply force to the player's object
-        rb.AddForce(vectForce);
+                // Cycle to next index of waypoint path if the player reaches one of the points
+                if (transform.position == waypoints[waypointIndex].transform.position)
+                {
+                    waypointIndex++;
+                }
+            }
+        }
+        else
+        {
+            // Grab horizontal input (support for gamepads, etc.)
+            float hdir = Input.GetAxisRaw("Horizontal");
+
+            // Grab direction of Vector; we don't care about other axes
+            Vector3 vectDir = new Vector3(hdir, 0, 0);
+            // Normalise it
+            Vector3 vectUnit = vectDir.normalized;
+            // Grab existing speed of RigidBody and multipler it based on value of movementSpeed
+            Vector3 vectForce = vectUnit * movementSpeed * Time.deltaTime;
+
+            // Apply force to the player's object
+            rb.AddForce(vectForce);
+        }
     }
 
     // Jump
@@ -120,6 +194,30 @@ public class Movement : MonoBehaviour
     // Returns: Nothing
     public void Jump()
     {
-        rb.AddForce(Vector3.up * jumpSpeed);
+        // Check first if we're in single or chain jump mode
+        if (disableChainJumps && player.GetComponent<Player>().isGrounded)
+        {
+            //Debug.Log("Llama is airborne. isGrounded has been set to " + player.GetComponent<Player>().isGrounded);
+            rb.AddForce(Vector3.up * jumpSpeed);
+
+            // Technically not needed but for safety, this will prevent any further jumping until we land
+            player.GetComponent<Player>().isGrounded = false;
+        }
+
+        // Allow chain jumps otherwise
+        if (!disableChainJumps)
+        {
+            rb.AddForce(Vector3.up * jumpSpeed);
+        }
+    }
+
+    // AlwaysMove
+    // Constantly moves the player right (slowly)
+    // Takes: Nothing
+    // Returns: Nothing
+    public void AlwaysMove()
+    {
+        Vector3 spd = new Vector3(crawlSpeed, 0, 0);
+        rb.AddForce(spd);
     }
 }
