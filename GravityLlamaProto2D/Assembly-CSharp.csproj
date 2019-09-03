@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AdjustGravity.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\Debug\Cheats.cs" />
     <Compile Include="Assets\Scripts\GravityLevel.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
