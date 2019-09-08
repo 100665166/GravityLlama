@@ -2,7 +2,7 @@
  * =============================================================================
  * 
  * [Gravity Llama]
- * Proof-of-concept
+ * Alpha
  * 
  * 
  * Script name:
@@ -83,6 +83,18 @@ public class Cheats : MonoBehaviour
         }
     }
 
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+
     // SpawnPositive
     // Creates a positive gravity pickup in front of the llama
     // Takes: Nothing
@@ -90,7 +102,7 @@ public class Cheats : MonoBehaviour
     public void SpawnPositive()
     {
         Debug.Log("Spawned a Gravity++ pickup.");
-        Instantiate(Resources.Load("GravityPlusPickup"), player.transform.position + (transform.right * 2), player.transform.rotation);
+        Instantiate(Resources.Load("Pickups/AddsGravity"), player.transform.position + (transform.right * 2), player.transform.rotation);
     }
 
     // SpawnNegative
@@ -100,6 +112,6 @@ public class Cheats : MonoBehaviour
     public void SpawnNegative()
     {
         Debug.Log("Spawned a Gravity-- pickup.");
-        Instantiate(Resources.Load("GravityMinusPickup"), player.transform.position + (transform.right * 2), player.transform.rotation);
+        Instantiate(Resources.Load("Pickups/LowersGravity"), player.transform.position + (transform.right * 2), player.transform.rotation);
     }
 }

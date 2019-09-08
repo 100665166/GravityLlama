@@ -2,7 +2,7 @@
  * =============================================================================
  * 
  * [Gravity Llama]
- * Proof-of-concept
+ * Alpha
  * 
  * 
  * Script name:
@@ -41,6 +41,6 @@ using UnityEngine;
 
 public class GravityLevel : MonoBehaviour
 {
-    [Tooltip("Float - Use this to determine how much gravity is currently within the scene. Be aware that too high or too low values can cause strange effects on RigidBody objects within the scene!")]
+    [Tooltip("Use this to determine how much gravity is currently within the scene. Be aware that too high or too low values can cause strange effects on RigidBody objects within the scene!")]
     public float gravityLevel = 5f;
 }
