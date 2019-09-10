@@ -33,6 +33,8 @@
  * 
  * Changelog:
  * 08-09    Initial
+ * 10-09    Added movement based on fixed Z value
+ * 11-09    Added temporary fix to prevent player falling off lanes
  * 
  * =============================================================================
  */
@@ -52,22 +54,24 @@ public class PlayerMovement : MonoBehaviour
         Right
     }
     //created a dictionary to make use of the above enum to know the current Z values (horizontal movement)
-    static readonly Dictionary<Lanes, int> LaneZ = new Dictionary<Lanes, int>
+    static readonly Dictionary<Lanes, double> LaneZ = new Dictionary<Lanes, double>
     {
-        {Lanes.Left , 0 },
-        {Lanes.CentreLeft , -4 },
-        {Lanes.CentreRight , -8 },
-        {Lanes.Right , -12 }
+        {Lanes.Left , 4.5 },
+        {Lanes.CentreLeft , 0 },
+        {Lanes.CentreRight , -4.5 },
+        {Lanes.Right , -9 }
     };
 
     [Header("GENERAL")]
+    [HideInInspector]
     [Tooltip("Which lane does the player start on? (make sure you've defined the lanes first)")]
-    public Lanes startingLane;
+    public Lanes startingLane;  // Temporarily disabled for now
 
     [Header("OPTIONS")]
     [Tooltip("How high can the player jump normally (affected by gravity)?")]
     public float jumpStrength = 750f;
-    public char movingTo;
+    [HideInInspector]
+    public char movingTo;   // Which lane is the llama moving to?
 
     [Header("LANES")]
     [Tooltip("Drag the left lane's GameObject here.")]
@@ -85,12 +89,16 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     [HideInInspector]
     public GameObject gm;
+    [HideInInspector]
     public Vector3 moveVector;
+    [HideInInspector]
+    public bool isChangingLane = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         currentLane = startingLane;
+
         try
         {
             gm = GameObject.FindGameObjectWithTag("EditorOnly");
@@ -104,7 +112,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         rb.drag = gm.GetComponent<GravityLevel>().gravityLevel;
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -136,8 +143,8 @@ public class PlayerMovement : MonoBehaviour
             moveVector = new Vector3(1, 0, 0);
             rb.AddForce(moveVector * 50);
         }
-
     }
+
     // ========================================================================================================
     // ********************************************************************************************************
     // ========================================================================================================
@@ -156,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
     // Returns Nothing
     public void Jump()
     {
-        if (GetComponent<Player>().isGrounded)
+        if (GetComponent<Player>().isGrounded && !isChangingLane)
         {
             rb.AddForce(Vector3.up * jumpStrength);
 
@@ -166,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // SwitchToLane
-    // Changes to the desired lane
+    // Changes to the desired lane, temporarily fixing velocity and reverting upon landing
     // Takes: Lanes
     // Returns: Nothing
     public void SwitchToLane(Lanes lane)
@@ -174,26 +181,31 @@ public class PlayerMovement : MonoBehaviour
         // Make sure we're grounded first before attempting to jump to another
         if (GetComponent<Player>().isGrounded)
         {
+            isChangingLane = true;
             currentLane = lane;
+
+            // Dump velocity so that we don't fly off the lanes
+            rb.velocity = new Vector3(0, 10, 0);
+            rb.angularVelocity = new Vector3(0, 10, 0);
+
             MoveLanes();
-            Debug.Log("Changing to the " + currentLane + " lane.");
+            //Debug.Log("Changing to the " + currentLane + " lane.");
         }
     }
     public void MoveLanes()
     {
-        Debug.Log("MovingLanes1 :" + movingTo);
+        //Debug.Log("MovingLanes1 :" + movingTo);
         if (movingTo == 'R' || movingTo == 'L')
         {
-
-            Debug.Log("MovingLanes :"+movingTo);
+            //Debug.Log("MovingLanes :"+movingTo);
             switch (movingTo)
             {
                 case 'R':
-                    moveVector = new Vector3(10, 10, -11.1f);
+                    moveVector = new Vector3(1, 1, -11.1f);
                     movingTo = 'N';
                     break;
                 case 'L':
-                    moveVector = new Vector3(10, 10, 11.1f);
+                    moveVector = new Vector3(1, 1, 11.1f);
                     movingTo = 'N';
                     break;
             }
@@ -258,4 +270,14 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
     }
+
+    // ResetVelocity
+    // Resets the player's original velocity settings after changing lanes
+    // Takes: Nothing
+    // Returns: Nothing
+    public void ResetVelocity()
+    {
+        isChangingLane = false;
+    }
+
 }

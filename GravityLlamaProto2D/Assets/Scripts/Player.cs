@@ -45,7 +45,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    [HideInInspector]
     public bool isGrounded = false; // For checking whether the llama can jump again or not; note that this has no effect unless disableChainJumps in Movement.cs is enabled
 
     // For detecting whether the player is grounded (needed for Movement.cs jumping)
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
     {
         if (c.gameObject.tag == "TerrainWall")
         {
-            //Debug.Log("Llama is on the ground.");
+            Debug.Log("Llama is on the ground.");
             isGrounded = true;
         }
     }
@@ -63,8 +63,14 @@ public class Player : MonoBehaviour
     {
         if (c.gameObject.tag == "TerrainWall")
         {
-            //Debug.Log("Llama is in the air.");
+            Debug.Log("Llama is in the air.");
             isGrounded = false;
+
+            // Resets llama's original velocities
+            if (GetComponent<PlayerMovement>().isChangingLane)
+            {
+                GetComponent<PlayerMovement>().ResetVelocity();
+            }
         }
     }
 }

@@ -31,6 +31,7 @@
  * 
  * Changelog:
  * 31-08    Initial
+ * 11-09    Fixed orientation problem with spawned pickups
  * 
  * =============================================================================
  */
@@ -102,7 +103,7 @@ public class Cheats : MonoBehaviour
     public void SpawnPositive()
     {
         Debug.Log("Spawned a Gravity++ pickup.");
-        Instantiate(Resources.Load("Pickups/AddsGravity"), player.transform.position + (transform.right * 2), player.transform.rotation);
+        Instantiate(Resources.Load("Pickups/AddsGravity"), player.transform.position + (transform.right * 8) + (player.transform.up * 2), player.transform.rotation);
     }
 
     // SpawnNegative
@@ -112,6 +113,6 @@ public class Cheats : MonoBehaviour
     public void SpawnNegative()
     {
         Debug.Log("Spawned a Gravity-- pickup.");
-        Instantiate(Resources.Load("Pickups/LowersGravity"), player.transform.position + (transform.right * 2), player.transform.rotation);
+        Instantiate(Resources.Load("Pickups/LowersGravity"), player.transform.position + (transform.right * 8) + (player.transform.up * 2), player.transform.rotation);
     }
 }

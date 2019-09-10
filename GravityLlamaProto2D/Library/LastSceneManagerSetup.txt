@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/MovementWithLanes.unity
+- path: Assets/Scenes/TestLevelWithLanes.unity
   isLoaded: 1
   isActive: 1

@@ -7,6 +7,7 @@ TagManager:
   - TerrainWall
   - ScoreCounter
   - Lanes
+  - Waypoint
   layers:
   - Default
   - TransparentFX
