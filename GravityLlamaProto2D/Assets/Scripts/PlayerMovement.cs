@@ -46,11 +46,19 @@ public class PlayerMovement : MonoBehaviour
 {
     public enum Lanes
     {
-        Left, 
-        CentreLeft, 
-        CentreRight, 
+        Left,
+        CentreLeft,
+        CentreRight,
         Right
     }
+    //created a dictionary to make use of the above enum to know the current Z values (horizontal movement)
+    static readonly Dictionary<Lanes, int> LaneZ = new Dictionary<Lanes, int>
+    {
+        {Lanes.Left , 0 },
+        {Lanes.CentreLeft , -4 },
+        {Lanes.CentreRight , -8 },
+        {Lanes.Right , -12 }
+    };
 
     [Header("GENERAL")]
     [Tooltip("Which lane does the player start on? (make sure you've defined the lanes first)")]
@@ -59,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("OPTIONS")]
     [Tooltip("How high can the player jump normally (affected by gravity)?")]
     public float jumpStrength = 750f;
+    public char movingTo;
 
     [Header("LANES")]
     [Tooltip("Drag the left lane's GameObject here.")]
@@ -76,12 +85,12 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     [HideInInspector]
     public GameObject gm;
+    public Vector3 moveVector;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         currentLane = startingLane;
-
         try
         {
             gm = GameObject.FindGameObjectWithTag("EditorOnly");
@@ -95,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         rb.drag = gm.GetComponent<GravityLevel>().gravityLevel;
+
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -114,6 +124,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        //if grounded default forward movement
+        if (GetComponent<Player>().isGrounded)
+        {
+            rb.AddForce(moveVector * 50);
+        }
+        else
+        {
+            moveVector = new Vector3(1, 0, 0);
+            rb.AddForce(moveVector * 50);
+        }
+
+    }
     // ========================================================================================================
     // ********************************************************************************************************
     // ========================================================================================================
@@ -150,18 +174,38 @@ public class PlayerMovement : MonoBehaviour
         // Make sure we're grounded first before attempting to jump to another
         if (GetComponent<Player>().isGrounded)
         {
-            rb.AddForce(Vector3.up * (jumpStrength * 0.9f));   // We shouldn't be affected by gravity as much unlike regular jumps
             currentLane = lane;
-            Debug.Log("Changing to the " + lane + " lane.");
+            MoveLanes();
+            Debug.Log("Changing to the " + currentLane + " lane.");
         }
     }
+    public void MoveLanes()
+    {
+        Debug.Log("MovingLanes1 :" + movingTo);
+        if (movingTo == 'R' || movingTo == 'L')
+        {
 
+            Debug.Log("MovingLanes :"+movingTo);
+            switch (movingTo)
+            {
+                case 'R':
+                    moveVector = new Vector3(10, 10, -11.1f);
+                    movingTo = 'N';
+                    break;
+                case 'L':
+                    moveVector = new Vector3(10, 10, 11.1f);
+                    movingTo = 'N';
+                    break;
+            }
+        }
+    }
     // ChangeLaneRight
     // Switches the player one lane right
     // Takes: Nothing
     // Returns: Nothing
     public void ChangeLaneRight()
     {
+        movingTo = 'R';
         switch (currentLane)
         {
             case Lanes.Left:
@@ -191,6 +235,7 @@ public class PlayerMovement : MonoBehaviour
     // Returns: Nothing
     public void ChangeLaneLeft()
     {
+        movingTo = 'L';
         switch (currentLane)
         {
             case Lanes.Left:
