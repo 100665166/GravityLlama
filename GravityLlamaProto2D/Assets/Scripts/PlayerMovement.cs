@@ -33,7 +33,7 @@
  * 
  * Changelog:
  * 08-09    Initial
- * 
+ * 10-09    simple hard coded vector 3 changes and addforce to make the player move forward and jump between lanes.
  * =============================================================================
  */
 
@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         Right
     }
     //created a dictionary to make use of the above enum to know the current Z values (horizontal movement)
+    //used in the future to figure out ways to better calculated forces needed to reach the centre z locations of each lane
     static readonly Dictionary<Lanes, int> LaneZ = new Dictionary<Lanes, int>
     {
         {Lanes.Left , 0 },
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("OPTIONS")]
     [Tooltip("How high can the player jump normally (affected by gravity)?")]
     public float jumpStrength = 750f;
+    //simple movingTo char for L and R to be decide +- z values
     public char movingTo;
 
     [Header("LANES")]
@@ -85,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     [HideInInspector]
     public GameObject gm;
+    //primary moveVector to be used to apply force to the player
     public Vector3 moveVector;
 
     void Start()
@@ -123,7 +126,12 @@ public class PlayerMovement : MonoBehaviour
             ChangeLaneLeft();
         }
     }
-
+    /// <summary>
+    /// FixedUpdate for updates per frame for movement.
+    /// having player.isGrounded to addforce as normal
+    /// else move as normal but in the air reset moveVector to the normal
+    /// scrolling movement vector (1,0,0)
+    /// </summary>
     private void FixedUpdate()
     {
         //if grounded default forward movement
@@ -175,10 +183,15 @@ public class PlayerMovement : MonoBehaviour
         if (GetComponent<Player>().isGrounded)
         {
             currentLane = lane;
+            //MoveLanes funciton moved to keep it tidy
             MoveLanes();
             Debug.Log("Changing to the " + currentLane + " lane.");
         }
     }
+    /// <summary>
+    /// Main lane Moving method hard coded new Vector3() values atm will work on getting the math to make things smoother towards beta
+    /// 
+    /// </summary>
     public void MoveLanes()
     {
         Debug.Log("MovingLanes1 :" + movingTo);
@@ -189,11 +202,11 @@ public class PlayerMovement : MonoBehaviour
             switch (movingTo)
             {
                 case 'R':
-                    moveVector = new Vector3(10, 10, -11.1f);
+                    moveVector = new Vector3(1, 10, -11.1f);
                     movingTo = 'N';
                     break;
                 case 'L':
-                    moveVector = new Vector3(10, 10, 11.1f);
+                    moveVector = new Vector3(1, 10, 11.1f);
                     movingTo = 'N';
                     break;
             }
@@ -203,6 +216,7 @@ public class PlayerMovement : MonoBehaviour
     // Switches the player one lane right
     // Takes: Nothing
     // Returns: Nothing
+    // added movingTo to be set in this method
     public void ChangeLaneRight()
     {
         movingTo = 'R';
@@ -233,6 +247,7 @@ public class PlayerMovement : MonoBehaviour
     // Switches the player one lane left
     // Takes: Lanes
     // Returns: Nothing
+    //add movingTo to be set in this method
     public void ChangeLaneLeft()
     {
         movingTo = 'L';
