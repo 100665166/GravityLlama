@@ -45,7 +45,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public bool isGrounded = false; // For checking whether the llama can jump again or not; note that this has no effect unless disableChainJumps in Movement.cs is enabled
 
     // For detecting whether the player is grounded (needed for Movement.cs jumping)

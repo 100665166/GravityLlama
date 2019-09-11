@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("How high can the player jump normally (affected by gravity)?")]
     public float jumpStrength = 750f;
     [HideInInspector]
-    public char movingTo;   // Which lane is the llama moving to?
+    public char movingTo;   // Which Side is the llama hopping to Left/Right for +-Z values in addforce vector
 
     [Header("LANES")]
     [Tooltip("Drag the left lane's GameObject here.")]
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         currentLane = startingLane;
-
+        
         try
         {
             gm = GameObject.FindGameObjectWithTag("EditorOnly");
@@ -138,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(moveVector * 50);
         }
+        //this else used to reset moveVector back after lane switch hop.
         else
         {
             moveVector = new Vector3(1, 0, 0);
@@ -185,9 +186,8 @@ public class PlayerMovement : MonoBehaviour
             currentLane = lane;
 
             // Dump velocity so that we don't fly off the lanes
-            rb.velocity = new Vector3(0, 10, 0);
-            rb.angularVelocity = new Vector3(0, 10, 0);
-
+            //rb.velocity = new Vector3(0, 10, 0);
+            //rb.angularVelocity = new Vector3(0, 10, 0);
             MoveLanes();
             //Debug.Log("Changing to the " + currentLane + " lane.");
         }
@@ -201,11 +201,11 @@ public class PlayerMovement : MonoBehaviour
             switch (movingTo)
             {
                 case 'R':
-                    moveVector = new Vector3(1, 1, -11.1f);
+                    moveVector = new Vector3(1, 5f, -14f);
                     movingTo = 'N';
                     break;
                 case 'L':
-                    moveVector = new Vector3(1, 1, 11.1f);
+                    moveVector = new Vector3(1, 5f, 14f);
                     movingTo = 'N';
                     break;
             }
