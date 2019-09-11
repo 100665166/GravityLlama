@@ -35,6 +35,7 @@
  * 08-09    Initial
  * 10-09    Added movement based on fixed Z value
  * 11-09    Added temporary fix to prevent player falling off lanes
+ * 11-09    Archived (still retained for backwards compatibility)
  * 
  * =============================================================================
  */
@@ -111,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        rb.drag = gm.GetComponent<GravityLevel>().gravityLevel;
+        rb.drag = gm.GetComponent<GravityLevel>().SetGravityLevel;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -134,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //if grounded default forward movement
-        if (GetComponent<Player>().isGrounded)
+        if (GetComponent<Player>().IsGrounded)
         {
             rb.AddForce(moveVector * 50);
         }
@@ -164,12 +165,12 @@ public class PlayerMovement : MonoBehaviour
     // Returns Nothing
     public void Jump()
     {
-        if (GetComponent<Player>().isGrounded && !isChangingLane)
+        if (GetComponent<Player>().IsGrounded && !isChangingLane)
         {
             rb.AddForce(Vector3.up * jumpStrength);
 
             // Technically not needed but for safety, this will prevent any further jumping until we land
-            GetComponent<Player>().isGrounded = false;
+            GetComponent<Player>().IsGrounded = false;
         }
     }
 
@@ -180,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
     public void SwitchToLane(Lanes lane)
     {
         // Make sure we're grounded first before attempting to jump to another
-        if (GetComponent<Player>().isGrounded)
+        if (GetComponent<Player>().IsGrounded)
         {
             isChangingLane = true;
             currentLane = lane;

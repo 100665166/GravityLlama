@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5505227322190106668}
   - component: {fileID: 8160181636056112124}
   - component: {fileID: 6389216778281983495}
+  - component: {fileID: 6443739792386013548}
   m_Layer: 0
   m_Name: AddsGravity
   m_TagString: Untagged
@@ -104,3 +105,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5910173605e2e1b409b65368fabd074b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &6443739792386013548
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957863558185610673}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

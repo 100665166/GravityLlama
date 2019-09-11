@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestLevelWithLanes.unity
+    path: Assets/Scenes/TestLevels/TestLevelWithLanes.unity
     guid: 1bb9a9aa05b8b7049bfe17776ca82f85
   m_configObjects: {}

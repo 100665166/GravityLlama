@@ -100,7 +100,7 @@ public class Movement : MonoBehaviour
         if (gm != null)
         {
             // Movement speeds affected by value in GameManager
-            rb.drag = gm.GetComponent<GravityLevel>().gravityLevel;
+            rb.drag = gm.GetComponent<GravityLevel>().SetGravityLevel;
         }
         else
         {
@@ -197,13 +197,13 @@ public class Movement : MonoBehaviour
     public void Jump()
     {
         // Check first if we're in single or chain jump mode
-        if (disableChainJumps && player.GetComponent<Player>().isGrounded)
+        if (disableChainJumps && player.GetComponent<Player>().IsGrounded)
         {
             //Debug.Log("Llama is airborne. isGrounded has been set to " + player.GetComponent<Player>().isGrounded);
             rb.AddForce(Vector3.up * jumpSpeed);
 
             // Technically not needed but for safety, this will prevent any further jumping until we land
-            player.GetComponent<Player>().isGrounded = false;
+            player.GetComponent<Player>().IsGrounded = false;
         }
 
         // Allow chain jumps otherwise

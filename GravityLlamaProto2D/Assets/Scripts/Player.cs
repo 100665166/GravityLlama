@@ -35,18 +35,76 @@
  * 21-08    Initial placeholder script
  * 31-08    Added OnCollision events for checking llama stability
  * 08-09    Removed some redundant functionality
+ * 11-09    Added properties and several new functions
  * 
  * =============================================================================
  */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //[HideInInspector]
-    public bool isGrounded = false; // For checking whether the llama can jump again or not; note that this has no effect unless disableChainJumps in Movement.cs is enabled
+    // ********************************************************************************************************
+
+    [SerializeField]
+    [Tooltip("Determines how high the player can jump.")]
+    private float jumpStrength = 750f;
+
+    // For checking whether the llama can jump again or not
+    private bool isGrounded = false;
+
+    private GameObject gm;
+    private LanesSystem ls;
+    private Rigidbody rb;
+
+    // ********************************************************************************************************
+
+    public float GetJumpStrength { get => jumpStrength; }
+    public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
+
+    // ********************************************************************************************************
+
+    void Start()
+    {
+        ls = GetComponent<LanesSystem>();
+        rb = GetComponent<Rigidbody>();
+
+        try
+        {
+            gm = GameObject.FindGameObjectWithTag("EditorOnly");
+        }
+        catch (NullReferenceException)
+        {
+            Debug.Log("[PLAYER.CS] No GameManager detected within the scene. Please add the prefab to the scene or create one and add GravityLevel.cs to it.");
+        }
+    }
+
+    // ********************************************************************************************************
+
+    private void Update()
+    {
+        rb.drag = gm.GetComponent<GravityLevel>().SetGravityLevel;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+    }
+
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
 
     // For detecting whether the player is grounded (needed for Movement.cs jumping)
     void OnCollisionEnter(Collision c)
@@ -54,9 +112,17 @@ public class Player : MonoBehaviour
         if (c.gameObject.tag == "TerrainWall")
         {
             Debug.Log("Llama is on the ground.");
-            isGrounded = true;
+            IsGrounded = true;
+
+            if (ls.IsChangingLane)
+            {
+                // Player can also change lanes again since they're grounded once more too
+                ls.IsChangingLane = false;
+            }
         }
     }
+
+    // ********************************************************************************************************
 
     // Ditto, but for checking whether the llama's airborne or not
     void OnCollisionExit(Collision c)
@@ -64,13 +130,26 @@ public class Player : MonoBehaviour
         if (c.gameObject.tag == "TerrainWall")
         {
             Debug.Log("Llama is in the air.");
-            isGrounded = false;
-
-            // Resets llama's original velocities
-            if (GetComponent<PlayerMovement>().isChangingLane)
-            {
-                GetComponent<PlayerMovement>().ResetVelocity();
-            }
+            IsGrounded = false;
         }
     }
+
+    // ********************************************************************************************************
+
+    // Jump
+    // Llama hops into the air (same lane only)
+    // Takes: Nothing
+    // Returns: Nothing
+    public void Jump()
+    {
+        if (IsGrounded && !ls.IsChangingLane)
+        {
+            rb.AddForce(Vector3.up * jumpStrength);
+
+            // Technically not needed but for safety, this will prevent any further jumping until we land
+            IsGrounded = false;
+        }
+    }
+
+    // ********************************************************************************************************
 }

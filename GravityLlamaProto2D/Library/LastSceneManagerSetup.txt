@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TestLevelWithLanes.unity
+- path: Assets/Scenes/TestLevels/StaticPlayerTest.unity
   isLoaded: 1
   isActive: 1

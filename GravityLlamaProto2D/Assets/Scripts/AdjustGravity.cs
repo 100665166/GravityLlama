@@ -37,6 +37,7 @@
  * 20-08    Initial
  * 21-08    Added validators to functions
  * 25-08    Added validators to prevent unintended gravity settings
+ * 11-09    Deleted some artefacts from the PoC
  * 
  * =============================================================================
  */
@@ -49,21 +50,14 @@ using UnityEngine;
 
 public class AdjustGravity : MonoBehaviour
 {
-    [HideInInspector]
-    public Button btn;
-    [HideInInspector]
-    public GameObject gm;   // For retrieving the current level of gravity in scene
+    // ********************************************************************************************************
+
+    private GameObject gm;   // For retrieving the current level of gravity in scene
+
+    // ********************************************************************************************************
 
     void Start()
     {
-        btn = GetComponent<Button>();
-
-        // Raising
-        //btn.onClick.AddListener(IncreaseGravity);
-
-        // Lowering
-        //btn.onClick.AddListener(DecreaseGravity);
-
         try
         {
             gm = GameObject.FindGameObjectWithTag("EditorOnly");    // For the GameManager object
@@ -95,12 +89,14 @@ public class AdjustGravity : MonoBehaviour
         if (gm != null)
         {
             // Validator to prevent drag levels from getting overboard
-            if (gm.GetComponent<GravityLevel>().gravityLevel != 10)
+            if (gm.GetComponent<GravityLevel>().SetGravityLevel != 10)
             {
-                gm.GetComponent<GravityLevel>().gravityLevel++;
+                gm.GetComponent<GravityLevel>().SetGravityLevel++;
             }
         }
     }
+
+    // ********************************************************************************************************
 
     // DecreaseGravity
     // Lowers amount of gravity in scene
@@ -111,10 +107,12 @@ public class AdjustGravity : MonoBehaviour
         if (gm != null)
         {
             // Ditto, but for negative values
-            if (gm.GetComponent<GravityLevel>().gravityLevel != 0)
+            if (gm.GetComponent<GravityLevel>().SetGravityLevel != 0)
             {
-                gm.GetComponent<GravityLevel>().gravityLevel--;
+                gm.GetComponent<GravityLevel>().SetGravityLevel--;
             }
         }
     }
+
+    // ********************************************************************************************************
 }
