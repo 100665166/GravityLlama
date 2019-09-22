@@ -27,11 +27,14 @@
  * 
  * 
  * Dependencies:
- * None
+ * Player.cs
+ * LaneMagnet.cs
  * 
  * 
  * Changelog:
  * 11-09    Initial
+ * 18-09    MoveToLane now uses proper physics-based transitions
+ * 22-09    Incorporates LaneMagnet functionality
  * 
  * =============================================================================
  */
@@ -77,6 +80,7 @@ public class LanesSystem : MonoBehaviour
     private GameObject gm;
     private Player player;
     private Rigidbody rb;
+    private LaneMagnet lm;
 
     // ********************************************************************************************************
 
@@ -95,23 +99,34 @@ public class LanesSystem : MonoBehaviour
         // Don't forget their RigidBody too
         rb.MovePosition(currentLane.transform.position);
 
+        // -------------------------------------------------------------------------------------------
+        // START
         // This entire block is devoted to making sure the enums are defined from the get-go
         if (currentLane == leftLane)
         {
             cLane = Lanes.left;
+            lm = currentLane.GetComponent<LaneMagnet>();
         }
         if (currentLane == centreLeftLane)
         {
             cLane = Lanes.centreLeft;
+            lm = currentLane.GetComponent<LaneMagnet>();
         }
         if (currentLane == centreRightLane)
         {
             cLane = Lanes.centreRight;
+            lm = currentLane.GetComponent<LaneMagnet>();
         }
         if (currentLane == rightLane)
         {
             cLane = Lanes.right;
+            lm = currentLane.GetComponent<LaneMagnet>();
         }
+        // END
+        // -------------------------------------------------------------------------------------------
+
+        // Make the starting lane "active" so that the llama gets pulled to it
+        lm.IsActive = true;
 
         try
         {
@@ -138,6 +153,7 @@ public class LanesSystem : MonoBehaviour
     void Update()
     {
         rb.drag = gm.GetComponent<GravityLevel>().SetGravityLevel;
+        lm = currentLane.GetComponent<LaneMagnet>();
 
         // Jump to right lane
         if (Input.GetKeyDown(KeyCode.D))
@@ -150,6 +166,9 @@ public class LanesSystem : MonoBehaviour
         {
             ChangeLane('L');
         }
+
+        // We need this to be constantly running so that the llama "sticks" to the lane
+        MoveToLane(currentLane);
     }
 
     // ********************************************************************************************************
@@ -160,29 +179,31 @@ public class LanesSystem : MonoBehaviour
     // Returns: Nothing
     public void ChangeLane(char direction)
     {
-        if (!IsChangingLane)
+        // Cannot already be changing lane AND must not be mid-air
+        if (!IsChangingLane && player.IsGrounded)
         {
             switch (direction)
             {
                 case 'L':   // For moving to lanes left of the player's current position
                     switch (cLane)
                     {
+                        // TODO: shift case actions to a dedicated function with parameters?
                         case Lanes.left:
                             break;
                         case Lanes.centreLeft:
+                            rb.AddForce(Vector3.up * player.GetJumpStrength);
                             currentLane = leftLane;
                             cLane = Lanes.left;
-                            MoveToLane();
                             break;
                         case Lanes.centreRight:
+                            rb.AddForce(Vector3.up * player.GetJumpStrength);
                             currentLane = centreLeftLane;
                             cLane = Lanes.centreLeft;
-                            MoveToLane();
                             break;
                         case Lanes.right:
+                            rb.AddForce(Vector3.up * player.GetJumpStrength);
                             currentLane = centreRightLane;
                             cLane = Lanes.centreRight;
-                            MoveToLane();
                             break;
                         default:
                             break;
@@ -193,19 +214,19 @@ public class LanesSystem : MonoBehaviour
                     switch (cLane)
                     {
                         case Lanes.left:
+                            rb.AddForce(Vector3.up * player.GetJumpStrength);
                             currentLane = centreLeftLane;
                             cLane = Lanes.centreLeft;
-                            MoveToLane();
                             break;
                         case Lanes.centreLeft:
+                            rb.AddForce(Vector3.up * player.GetJumpStrength);
                             currentLane = centreRightLane;
                             cLane = Lanes.centreRight;
-                            MoveToLane();
                             break;
                         case Lanes.centreRight:
+                            rb.AddForce(Vector3.up * player.GetJumpStrength);
                             currentLane = rightLane;
                             cLane = Lanes.right;
-                            MoveToLane();
                             break;
                         case Lanes.right:
                             break;
@@ -223,14 +244,28 @@ public class LanesSystem : MonoBehaviour
     // ********************************************************************************************************
 
     // MoveToLane
-    // This physically relocates the llama to its designated lane
-    // Takes: Transform
+    // Physically relocates the llama to an active lane by pulling them towards it like a magnet
+    // Takes: GameObject
     // Returns: Nothing
-    public void MoveToLane()
+    public void MoveToLane(GameObject lane)
     {
-        // For testing purposes only; replace this entire function's contents with proper RigidBody-based vector movement
-        transform.position = currentLane.transform.position;
-        rb.MovePosition(currentLane.transform.position);
+        // This validator is only needed if gravity is too high so that the llama transitions without getting stuck
+        if (gm.GetComponent<GravityLevel>().SetGravityLevel > 5)
+        {
+            // Vegeta would be proud
+            rb.AddForce((lane.transform.position - transform.position) * 9000f * Time.smoothDeltaTime);
+        }
+        else
+        {
+            rb.AddForce((lane.transform.position - transform.position) * 750f * Time.smoothDeltaTime);
+        }
+        //Debug.Log("Llama is being pulled to the " + lm + " lane.");
+
+        // -------------------------------------------------------------------------------------------
+        // DEPRECATED: For testing purposes only; replace this entire function's contents with proper RigidBody-based vector movement
+        //transform.position = currentLane.transform.position;
+        //rb.MovePosition(currentLane.transform.position);
+        // -------------------------------------------------------------------------------------------
     }
 
     // ********************************************************************************************************

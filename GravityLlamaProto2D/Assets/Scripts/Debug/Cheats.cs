@@ -34,6 +34,7 @@
  * 31-08    Initial
  * 11-09    Fixed orientation problem with spawned pickups
  * 12-09    Can now change gravity on the fly without having to press UI buttons
+ * 22-09    MoonJumping added
  * 
  * =============================================================================
  */
@@ -47,7 +48,7 @@ public class Cheats : MonoBehaviour
 {
     // ********************************************************************************************************
 
-    [Tooltip("Activate cheats for testing. The commands are as follows:\nLEFTSHIFT + E: Spawn Gravity+ Pickup\nLEFTSHIFT + R: Spawn Gravity- Pickup")]
+    [Tooltip("Activate cheats for testing. The commands are as follows (hold LEFTSHIFT & specific key):\n[C]: Enable moon jumping\n[Z]: Increase gravity levels by +1\n[X]: Lower gravity levels by -1\n[E]: Spawn Gravity+ Pickup in front of player\n[R]: Spawn Gravity- Pickup in front of player")]
     public bool enableCheats = true;    // Deactivate for public beta/release
 
     private Player player;   // Need to get player's position so that things can spawn properly
@@ -79,6 +80,12 @@ public class Cheats : MonoBehaviour
             // No cheats for you either if the flag isn't toggled
             if (enableCheats)
             {
+                // Moon jumping
+                if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.C))
+                {
+                    MoonJumping();
+                }
+
                 // Increase gravity
                 if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Z))
                 {
@@ -117,6 +124,18 @@ public class Cheats : MonoBehaviour
     // ========================================================================================================
     // ********************************************************************************************************
     // ========================================================================================================
+
+    // MoonJumping
+    // Multiplies jumpStrength of player by ten times
+    // Takes: Nothing
+    // Returns: Nothing
+    public void MoonJumping()
+    {
+        Debug.Log("Moon Jumping activated.");
+        player.SetJumpStrength = player.GetJumpStrength * 10;
+    }
+
+    // ********************************************************************************************************
 
     // RaiseGravity
     // Instantly raise gravityLevel by one
