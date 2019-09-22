@@ -74,6 +74,9 @@ public class PickupGenerator : MonoBehaviour
         while (true)
         {
             GameObject pickup = Instantiate(pickupsToSpawn[prefabIndex], transform.position, transform.rotation);
+            pickup.AddComponent<Rigidbody>();
+            pickup.AddComponent<Despawner>();
+            pickup.transform.Rotate(0, 0, 90);
             pickup.GetComponent<Rigidbody>().AddForce(Vector3.back * 4000f);
             yield return new WaitForSeconds(UnityEngine.Random.Range(2, 6));
         }
