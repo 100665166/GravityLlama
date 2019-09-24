@@ -35,6 +35,7 @@
  * 11-09    Fixed orientation problem with spawned pickups
  * 12-09    Can now change gravity on the fly without having to press UI buttons
  * 22-09    MoonJumping added
+ * 24-09    Supersonic mode added
  * 
  * =============================================================================
  */
@@ -48,7 +49,7 @@ public class Cheats : MonoBehaviour
 {
     // ********************************************************************************************************
 
-    [Tooltip("Activate cheats for testing. The commands are as follows (hold LEFTSHIFT & specific key):\n[C]: Enable moon jumping\n[Z]: Increase gravity levels by +1\n[X]: Lower gravity levels by -1\n[E]: Spawn Gravity+ Pickup in front of player\n[R]: Spawn Gravity- Pickup in front of player")]
+    [Tooltip("Activate cheats for testing. The commands are as follows (hold LEFTSHIFT & specific key):\n[V]: Levels automatically move at Extreme (gravity 1) speeds\n[C]: Enable moon jumping\n[Z]: Increase gravity levels by +1\n[X]: Lower gravity levels by -1\n[E]: Spawn Gravity+ Pickup in front of player\n[R]: Spawn Gravity- Pickup in front of player")]
     public bool enableCheats = true;    // Deactivate for public beta/release
 
     private Player player;   // Need to get player's position so that things can spawn properly
@@ -80,6 +81,12 @@ public class Cheats : MonoBehaviour
             // No cheats for you either if the flag isn't toggled
             if (enableCheats)
             {
+                // Supersonic mode
+                if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.V))
+                {
+                    SupersonicMode();
+                }
+
                 // Moon jumping
                 if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.C))
                 {
@@ -125,6 +132,18 @@ public class Cheats : MonoBehaviour
     // ********************************************************************************************************
     // ========================================================================================================
 
+    // SupersonicMode
+    // Sets level transition speed to Extreme (ignores gravityLevel)
+    // Takes: Nothing
+    // Returns: Nothing
+    public void SupersonicMode()
+    {
+        Debug.Log("Supersonic mode triggered.");
+        gm.GetComponent<TerrainMover>().ModifyCyclingSpeed = TerrainMover.LevelSpeed.Extreme;
+    }
+
+    // ********************************************************************************************************
+
     // MoonJumping
     // Multiplies jumpStrength of player by ten times
     // Takes: Nothing
@@ -168,7 +187,8 @@ public class Cheats : MonoBehaviour
     public void SpawnPositive()
     {
         Debug.Log("Spawned a Gravity++ pickup.");
-        Instantiate(Resources.Load("Pickups/AddsGravity"), player.transform.position + (transform.right * 8) + (player.transform.up * 2), player.transform.rotation);
+        GameObject pickup = Instantiate(Resources.Load("Pickups/AddsGravity"), player.transform.position + (transform.right * 8) + (player.transform.up * 2), player.transform.rotation) as GameObject;
+        pickup.GetComponent<Rigidbody>().AddForce(Vector3.back * 750f);
     }
 
     // ********************************************************************************************************
@@ -180,7 +200,8 @@ public class Cheats : MonoBehaviour
     public void SpawnNegative()
     {
         Debug.Log("Spawned a Gravity-- pickup.");
-        Instantiate(Resources.Load("Pickups/LowersGravity"), player.transform.position + (transform.right * 8) + (player.transform.up * 2), player.transform.rotation);
+        GameObject pickup = Instantiate(Resources.Load("Pickups/LowersGravity"), player.transform.position + (transform.right * 8) + (player.transform.up * 2), player.transform.rotation) as GameObject;
+        pickup.GetComponent<Rigidbody>().AddForce(Vector3.back * 750f);
     }
 
     // ********************************************************************************************************

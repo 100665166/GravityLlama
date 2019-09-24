@@ -32,6 +32,7 @@
  * 
  * Changelog:
  * 22-09    Initial
+ * 24-09    Disabled SerializeField due to lack of neccessity
  * 
  * =============================================================================
  */
@@ -42,7 +43,7 @@ using UnityEngine;
 
 public class LaneMagnet : MonoBehaviour
 {
-    [SerializeField]
+    //[SerializeField]
     private bool isActive = false;  // Is this magnet currently dragging the player?
 
     // ********************************************************************************************************

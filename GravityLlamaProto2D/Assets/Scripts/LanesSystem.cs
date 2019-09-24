@@ -35,6 +35,7 @@
  * 11-09    Initial
  * 18-09    MoveToLane now uses proper physics-based transitions
  * 22-09    Incorporates LaneMagnet functionality
+ * 24-09    Minor adjusting to debug output for clarity
  * 
  * =============================================================================
  */
@@ -208,7 +209,7 @@ public class LanesSystem : MonoBehaviour
                         default:
                             break;
                     }
-                    Debug.Log("Llama is now on the " + cLane + " lane");
+                    Debug.Log("Llama is now on the <color=blue>" + cLane + "</color> lane");
                     break;
                 case 'R':   // For moving to lanes right of the player's current position
                     switch (cLane)
@@ -233,7 +234,7 @@ public class LanesSystem : MonoBehaviour
                         default:
                             break;
                     }
-                    Debug.Log("Llama is now on the " + cLane + " lane");
+                    Debug.Log("Llama is now on the <color=blue>" + cLane + "</color> lane");
                     break;
                 default:
                     break;
