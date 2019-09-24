@@ -42,6 +42,10 @@ using UnityEngine;
 
 public class AddsGravityPickup : PickupBase
 {
+    protected override void Reset()
+    {
+    }
+
     protected override void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.CompareTag("Player"))

@@ -36,6 +36,7 @@
  * 22-09    Temporarily disabled script due to serious issues
  * 24-09    Refactored; now functions properly and cycles through prefab stages
  * 25-09    It is now possible to increase/decrease speed of level cycling
+ * 25-09    Temporarily disabled script again due to bugs
  * 
  * =============================================================================
  */
@@ -135,6 +136,8 @@ public class TerrainMover : MonoBehaviour
 
     void Update()
     {
+        // DISABLED TEMPORARILY
+
         // Start moving level parts immediately
         //StartCoroutine(CycleTerrain());
     }
@@ -147,7 +150,7 @@ public class TerrainMover : MonoBehaviour
     // Returns: Nothing
     public void DisableTerrain()
     {
-
+        // DISABLED TEMPORARILY
     }
 
     // ********************************************************************************************************
@@ -160,7 +163,7 @@ public class TerrainMover : MonoBehaviour
     {
         while (true)
         {
-
+            // DISABLED TEMPORARILY
         }
     }
 

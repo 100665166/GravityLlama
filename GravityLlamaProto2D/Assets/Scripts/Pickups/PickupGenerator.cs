@@ -32,6 +32,7 @@
  * Changelog:
  * 12-09    Initial
  * 22-09    Updated script to automatically delete uncollected pickups not long after spawning
+ * 24-09    Fixed spawners not actually resetting to random seeds every time coroutine runs
  * 
  * =============================================================================
  */
@@ -80,6 +81,9 @@ public class PickupGenerator : MonoBehaviour
 
             // Wait for random amount of time before spawning again
             yield return new WaitForSeconds(UnityEngine.Random.Range(3, 5));
+
+            // Randomise again
+            prefabIndex = UnityEngine.Random.Range(0, pickupsToSpawn.Count);
 
             // Remove the previous pickup before spawning another if it's still "alive"
             if (pickup != null)
