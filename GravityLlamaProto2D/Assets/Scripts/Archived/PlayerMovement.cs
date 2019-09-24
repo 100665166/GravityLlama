@@ -47,6 +47,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    void Reset()
+    {
+        hideFlags = HideFlags.HideInInspector;
+    }
+
     public enum Lanes
     {
         Left,

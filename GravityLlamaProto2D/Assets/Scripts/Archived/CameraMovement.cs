@@ -46,6 +46,11 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    void Reset()
+    {
+        hideFlags = HideFlags.HideInInspector;
+    }
+
     // Distance between the player and camera
     private Vector3 offset;
     // Direction that player object is facing

@@ -51,6 +51,11 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    void Reset()
+    {
+        hideFlags = HideFlags.HideInInspector;
+    }
+
     public enum MovementType
     {
         SideScroll, 

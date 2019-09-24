@@ -47,6 +47,11 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
+    void Reset()
+    {
+        hideFlags = HideFlags.HideInInspector;
+    }
+
     public enum AffectsGravity
     {
         Raise, 

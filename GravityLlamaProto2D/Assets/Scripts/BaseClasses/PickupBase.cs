@@ -44,6 +44,11 @@ using UnityEngine;
 
 public abstract class PickupBase : MonoBehaviour
 {
+    void Reset()
+    {
+        hideFlags = HideFlags.HideInInspector;
+    }
+
     protected GameObject gm;
 
     protected virtual void Start()
