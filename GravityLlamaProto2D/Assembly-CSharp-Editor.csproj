@@ -60,7 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
+    <Compile Include="Assets\Editor\ReplaceWithPrefab.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>J:/GitHub/test/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -684,14 +684,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{18CA0570-4026-C161-3216-5AD0876D3FC2}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathCreator.csproj">
-      <Project>{42E7572C-8858-9B46-3DEC-48BA6CEC1368}</Project>
-      <Name>PathCreator</Name>
-    </ProjectReference>
-    <ProjectReference Include="PathCreatorEditor.csproj">
-      <Project>{1EE8D722-5C2F-81BB-FCC2-48C1CE370CEB}</Project>
-      <Name>PathCreatorEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

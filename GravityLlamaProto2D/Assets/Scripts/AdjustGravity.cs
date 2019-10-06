@@ -40,6 +40,7 @@
  * 25-08    Added validators to prevent unintended gravity settings
  * 11-09    Deleted some artefacts from the PoC
  * 24-09    Added functionality related to TerrainMover
+ * 06-10    ValidateLevelSpeed moved to Update
  * 
  * =============================================================================
  */
@@ -86,6 +87,14 @@ public class AdjustGravity : MonoBehaviour
     // ********************************************************************************************************
     // ========================================================================================================
 
+    void Update()
+    {
+        // Need to make sure speed changes are always checked every frame
+        ValidateLevelSpeed();
+    }
+
+    // ********************************************************************************************************
+
     // IncreaseGravity
     // Raises amount of gravity in scene
     // Takes: Nothing
@@ -98,7 +107,6 @@ public class AdjustGravity : MonoBehaviour
             if (gm.GetComponent<GravityLevel>().SetGravityLevel != 10)
             {
                 gm.GetComponent<GravityLevel>().SetGravityLevel++;
-                ValidateLevelSpeed();
             }
         }
     }
@@ -117,7 +125,6 @@ public class AdjustGravity : MonoBehaviour
             if (gm.GetComponent<GravityLevel>().SetGravityLevel != 0)
             {
                 gm.GetComponent<GravityLevel>().SetGravityLevel--;
-                ValidateLevelSpeed();
             }
         }
     }

@@ -37,6 +37,7 @@
  * 08-09    Removed some redundant functionality
  * 11-09    Added properties and several new functions
  * 18-09    Added support for lane switching, jumpStrength properties
+ * 06-10    Fixed missing (?) IsPlayerJumping variable
  * 
  * =============================================================================
  */
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour
 
     // For checking whether the llama can jump again or not
     private bool isGrounded = false;
+    private bool isJumping = false;
 
     private GameObject gm;
     private LanesSystem ls;
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
     public float GetJumpStrength { get => jumpStrength; }
     public float SetJumpStrength { set => jumpStrength = value; }
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
+    public bool IsJumping { get => isJumping; set => isJumping = value; }
 
     // ********************************************************************************************************
 

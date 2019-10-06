@@ -33,6 +33,7 @@
  * Changelog:
  * 22-09    Initial
  * 24-09    Disabled SerializeField due to lack of neccessity
+ * 06-10    Added editor-only Gizmo for usability
  * 
  * =============================================================================
  */
@@ -43,7 +44,6 @@ using UnityEngine;
 
 public class LaneMagnet : MonoBehaviour
 {
-    //[SerializeField]
     private bool isActive = false;  // Is this magnet currently dragging the player?
 
     // ********************************************************************************************************
@@ -62,5 +62,9 @@ public class LaneMagnet : MonoBehaviour
     // ********************************************************************************************************
     // ========================================================================================================
 
-
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawCube(transform.position, new Vector3(0.5f, 0.5f, 0.5f));
+    }
 }

@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Archived\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\PickupBase.cs" />
     <Compile Include="Assets\Scripts\Debug\Cheats.cs" />
+    <Compile Include="Assets\Scripts\GoalEndLevel.cs" />
     <Compile Include="Assets\Scripts\GravityLevel.cs" />
     <Compile Include="Assets\Scripts\LaneMagnet.cs" />
     <Compile Include="Assets\Scripts\LanesSystem.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ScoringSystem.cs" />
     <Compile Include="Assets\Scripts\TerrainMover.cs" />
+    <None Include="Assets\Shaders\Glow.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>J:/GitHub/test/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

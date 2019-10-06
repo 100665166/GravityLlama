@@ -36,6 +36,7 @@
  * 18-09    MoveToLane now uses proper physics-based transitions
  * 22-09    Incorporates LaneMagnet functionality
  * 24-09    Minor adjusting to debug output for clarity
+ * 07-10    Player can now swap between lanes while A/D are held down
  * 
  * =============================================================================
  */
@@ -198,11 +199,15 @@ public class LanesSystem : MonoBehaviour
         //    //rb.velocity = Vector3.zero;
         //}
     }
-    private void FixedUpdate()
+
+    // ********************************************************************************************************
+
+    void FixedUpdate()
     {
         // We need this to be constantly running so that the llama "sticks" to the lane
         MoveToLane(currentLane);
     }
+
     // ********************************************************************************************************
 
     // ChangeLane
@@ -265,7 +270,7 @@ public class LanesSystem : MonoBehaviour
                         default:
                             break;
                     }
-                    //Debug.Log("Llama is now on the <color=blue>" + cLane + "</color> lane");
+                    Debug.Log("Llama is now on the <color=blue>" + cLane + "</color> lane");
                     break;
                 default:
                     break;
@@ -342,7 +347,7 @@ public class LanesSystem : MonoBehaviour
     {
         //Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
         //Debug.Log("MoveToLane:" + lane.transform.position.x + " player po x:" + player.transform.position.x);
-        Debug.Log("rb velocity move to lane:" + rb.velocity.ToString());
+        //Debug.Log("rb velocity move to lane:" + rb.velocity.ToString());
         // This validator is only needed if gravity is too high so that the llama transitions without getting stuck
         if (gm.GetComponent<GravityLevel>().SetGravityLevel > 5)
         {
