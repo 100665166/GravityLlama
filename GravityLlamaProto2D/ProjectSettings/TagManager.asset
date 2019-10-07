@@ -9,6 +9,7 @@ TagManager:
   - Lanes
   - Waypoint
   - GravityStatusBar
+  - GameManager
   layers:
   - Default
   - TransparentFX

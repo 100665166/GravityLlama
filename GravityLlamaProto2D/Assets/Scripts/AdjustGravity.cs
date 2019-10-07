@@ -64,7 +64,7 @@ public class AdjustGravity : MonoBehaviour
     {
         try
         {
-            gm = GameObject.FindGameObjectWithTag("EditorOnly");    // For the GameManager object
+            gm = GameObject.FindGameObjectWithTag("GameManager");    // For the GameManager object
         }
         catch (NullReferenceException)
         {

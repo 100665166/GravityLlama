@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: fb8da1aee7f615c4ea93f7701cb3422e
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ankle.l
+    100002: ankle.r
+    100004: arm.l
+    100006: arm.r
+    100008: Armature
+    100010: Armature.001
+    100012: collar
+    100014: ear.l
+    100016: ear.l_end
+    100018: ear.r
+    100020: ear.r_end
+    100022: foot.l
+    100024: foot.l_end
+    100026: foot.r
+    100028: foot.r_end
+    100030: hand.l
+    100032: hand.l_end
+    100034: hand.r
+    100036: hand.r_end
+    100038: hat
+    100040: hat_end
+    100042: leg.l
+    100044: leg.r
+    100046: Light
+    100048: //RootNode
+    100050: MULLET
+    100052: MULLET.001
+    100054: MULLET.002
+    100056: MULLET.002_end
+    100058: neck1
+    100060: neck1.001
+    100062: neck1.002
+    100064: neck1.003
+    100066: neck1.004
+    100068: neck1.004_end
+    100070: NEW_Plane.000
+    100072: NEW_Plane.001
+    100074: NEW_Plane.009
+    100076: RootHip
+    100078: RootHip.005
+    100080: RootHip.005_end
+    100082: shoulder.l
+    100084: shoulder.r
+    100086: Spine1
+    100088: thigh.l
+    100090: thigh.r
+    100092: wrist.l
+    100094: wrist.r
+    400000: ankle.l
+    400002: ankle.r
+    400004: arm.l
+    400006: arm.r
+    400008: Armature
+    400010: Armature.001
+    400012: collar
+    400014: ear.l
+    400016: ear.l_end
+    400018: ear.r
+    400020: ear.r_end
+    400022: foot.l
+    400024: foot.l_end
+    400026: foot.r
+    400028: foot.r_end
+    400030: hand.l
+    400032: hand.l_end
+    400034: hand.r
+    400036: hand.r_end
+    400038: hat
+    400040: hat_end
+    400042: leg.l
+    400044: leg.r
+    400046: Light
+    400048: //RootNode
+    400050: MULLET
+    400052: MULLET.001
+    400054: MULLET.002
+    400056: MULLET.002_end
+    400058: neck1
+    400060: neck1.001
+    400062: neck1.002
+    400064: neck1.003
+    400066: neck1.004
+    400068: neck1.004_end
+    400070: NEW_Plane.000
+    400072: NEW_Plane.001
+    400074: NEW_Plane.009
+    400076: RootHip
+    400078: RootHip.005
+    400080: RootHip.005_end
+    400082: shoulder.l
+    400084: shoulder.r
+    400086: Spine1
+    400088: thigh.l
+    400090: thigh.r
+    400092: wrist.l
+    400094: wrist.r
+    2100000: Material.002
+    2100002: Material
+    2300000: NEW_Plane.009
+    3300000: NEW_Plane.009
+    4300000: NEW_Plane.009
+    4300002: NEW_Plane.000
+    4300004: NEW_Plane.001
+    7400000: Armature|delete.001
+    7400002: Armature|delete.002
+    7400004: Armature|delete
+    7400006: Armature.001|delete.001
+    7400008: Armature.001|delete
+    7400010: Armature.001|LeanLeft
+    7400012: Armature.001|mulletrun
+    9500000: //RootNode
+    10800000: Light
+    13700000: NEW_Plane.000
+    13700002: NEW_Plane.001
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
         
         try
         {
-            gm = GameObject.FindGameObjectWithTag("EditorOnly");
+            gm = GameObject.FindGameObjectWithTag("GameManager");
         }
         catch (NullReferenceException)
         {
