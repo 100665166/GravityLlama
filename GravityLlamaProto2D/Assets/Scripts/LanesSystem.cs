@@ -179,17 +179,23 @@ public class LanesSystem : MonoBehaviour
         //using if (Mathf.Abs(currentLane.transform.position.x - player.transform.position.x) < x) to prevent holding down keys
         //to continuely add force in changelane addforce making u jump beyond the next lane.
         //isChangingLane bool seems to not be preventing this.
-        if (!isChangingLane)
+            //Debug.Log("!isChangingLaneUpdate");
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            if (Input.GetAxisRaw("Horizontal") > 0)
+            Debug.Log("Horizontal>0=" + Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)));
+            if (Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)) < .3)
             {
-                if (Mathf.Abs(currentLane.transform.position.x - player.transform.position.x) < .2)
-                    ChangeLane('R');
+                ChangeLane('R');
+                Debug.Log("Update X:X close enough");
             }
-            else if (Input.GetAxisRaw("Horizontal") < 0)
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            Debug.Log("Horizontal<0="+ Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)));
+            if (Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)) < .3)
             {
-                if (Mathf.Abs(currentLane.transform.position.x - player.transform.position.x) < .2)
-                    ChangeLane('L');
+                ChangeLane('L');
+                Debug.Log("Update X:X close enough");
             }
         }
         //reset player velocity when x reaches lane x
