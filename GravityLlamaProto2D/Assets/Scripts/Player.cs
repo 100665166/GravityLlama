@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
 
         try
         {
-            gm = GameObject.FindGameObjectWithTag("EditorOnly");
+            gm = GameObject.FindGameObjectWithTag("GameManager");
         }
         catch (NullReferenceException)
         {

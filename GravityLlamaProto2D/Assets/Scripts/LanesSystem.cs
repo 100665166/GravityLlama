@@ -132,7 +132,7 @@ public class LanesSystem : MonoBehaviour
 
         try
         {
-            gm = GameObject.FindGameObjectWithTag("EditorOnly");
+            gm = GameObject.FindGameObjectWithTag("GameManager");
         }
         catch (NullReferenceException)
         {
@@ -356,7 +356,7 @@ public class LanesSystem : MonoBehaviour
         }
         else
         {
-            rb.AddForce((lane.transform.position - transform.position) * 750f * Time.smoothDeltaTime);
+            rb.AddForce((lane.transform.position - transform.position) * 1000f * Time.smoothDeltaTime);
         }
         //Debug.Log("Llama is being pulled to the " + lm + " lane.");
 

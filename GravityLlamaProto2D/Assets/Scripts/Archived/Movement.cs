@@ -90,7 +90,7 @@ public class Movement : MonoBehaviour
 
         try
         {
-            gm = GameObject.FindGameObjectWithTag("EditorOnly");    // For the GameManager object
+            gm = GameObject.FindGameObjectWithTag("GameManager");    // For the GameManager object
             player = GameObject.FindGameObjectWithTag("Player");    // For the llama
         }
         catch (NullReferenceException)

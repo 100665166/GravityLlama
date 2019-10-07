@@ -8,17 +8,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 7812056638479757784}
-  - component: {fileID: 7812056638481052158}
-  - component: {fileID: 7812056638482051902}
-  - component: {fileID: 7812056638480117246}
-  - component: {fileID: 7812056638480117241}
-  - component: {fileID: 7812056638480117245}
-  - component: {fileID: 7812056638480117244}
-  - component: {fileID: 7812056638480117247}
-  - component: {fileID: 7657445674153357290}
-=======
   - component: {fileID: 4892932932505270444}
   - component: {fileID: 4892932932505270442}
   - component: {fileID: 4892932932505270445}
@@ -109,7 +98,6 @@ GameObject:
   - component: {fileID: 2774796165048875727}
   - component: {fileID: 5251664131384167798}
   - component: {fileID: 4654439993489695388}
->>>>>>> 0b729b20a13dc8964931a60ac1892c4cbcb0fd40
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -234,64 +222,8 @@ MonoBehaviour:
   centreRightLane: {fileID: 0}
   rightLane: {fileID: 0}
   startingLane: {fileID: 0}
-<<<<<<< HEAD
---- !u!95 &7657445674153357290
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7812056638480117240}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8c52052e625fe28458a8f80a23dd7a0d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &8821169855121409859
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8821169855121409856}
-  - component: {fileID: 8821169855121409862}
-  - component: {fileID: 8821169855121409857}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8821169855121409856
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8821169855121409859}
-  m_LocalRotation: {x: 0.043699384, y: 0.70575523, z: -0.043699384, w: 0.70575523}
-  m_LocalPosition: {x: -0.0485, y: 0.0384, z: -0.0001}
-  m_LocalScale: {x: 0.010000002, y: 0.010000001, z: 0.0100000035}
-  m_Children: []
-  m_Father: {fileID: 7812056638479757784}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 7.0860004, y: 0, z: 0}
---- !u!20 &8821169855121409862
-Camera:
-=======
 --- !u!54 &4654439993489695388
 Rigidbody:
->>>>>>> 0b729b20a13dc8964931a60ac1892c4cbcb0fd40
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

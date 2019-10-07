@@ -31,6 +31,7 @@
  * 
  * Changelog:
  * 08-09    Initial
+ * 08-10    Added sound effect parameter
  * 
  * =============================================================================
  */
@@ -50,6 +51,7 @@ public class LowersGravityPickup : PickupBase
     {
         if (c.gameObject.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(gm.GetComponent<AudioManager>().negativePickupSound, c.transform.position);
             gm.GetComponent<AdjustGravity>().DecreaseGravity();
             gm.GetComponent<ScoringSystem>().currentScore++;
             Destroy(gameObject);

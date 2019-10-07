@@ -31,6 +31,7 @@
  * 
  * Changelog:
  * 07-10    Initial
+ * 08-10    Temporarily restarts level once goal reached
  * 
  * =============================================================================
  */
@@ -39,6 +40,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;  // Temp
 
 public class GoalEndLevel : MonoBehaviour
 {
@@ -50,7 +52,7 @@ public class GoalEndLevel : MonoBehaviour
     {
         try
         {
-            gm = GameObject.FindGameObjectWithTag("EditorOnly");
+            gm = GameObject.FindGameObjectWithTag("GameManager");
         }
         catch (NullReferenceException)
         {
@@ -77,6 +79,7 @@ public class GoalEndLevel : MonoBehaviour
         {
             // If yes, then confirm that we've reached the end of the level
             gm.GetComponent<TerrainMover>().HasFinishedLevel = true;
+            SceneManager.LoadScene("Level1");   // Temp
         }
     }
 }
