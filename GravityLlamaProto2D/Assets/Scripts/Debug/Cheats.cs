@@ -63,7 +63,7 @@ public class Cheats : MonoBehaviour
 
         try
         {
-            gm = GameObject.FindGameObjectWithTag("GameManager");
+            gm = GameObject.FindGameObjectWithTag("EditorOnly");
         }
         catch (NullReferenceException)
         {

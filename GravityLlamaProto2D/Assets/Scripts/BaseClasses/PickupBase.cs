@@ -54,7 +54,7 @@ public abstract class PickupBase : MonoBehaviour
 
     protected virtual void Reset()
     {
-        //hideFlags = HideFlags.HideInInspector;
+        hideFlags = HideFlags.HideInInspector;
     }
 
     protected GameObject gm;
@@ -65,7 +65,7 @@ public abstract class PickupBase : MonoBehaviour
 
         try
         {
-            gm = GameObject.FindGameObjectWithTag("GameManager");
+            gm = GameObject.FindGameObjectWithTag("EditorOnly");
         }
         catch (NullReferenceException)
         {
