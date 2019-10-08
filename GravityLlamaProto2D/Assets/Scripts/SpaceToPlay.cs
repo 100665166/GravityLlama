@@ -13,13 +13,28 @@ public class SpaceToPlay : MonoBehaviour
     //        Debug.Log("Detected key code: " + e.keyCode);
     //    }
     //}
+    bool playable = false;
+    void Start()
+    {
+        StartCoroutine(PauseTutorial());
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (playable)
         {
-            Debug.Log("SpaceToPlay");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (Input.GetKeyDown("space"))
+            {
+                Debug.Log("SpaceToPlay");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
         }
+    }
+
+    IEnumerator PauseTutorial()
+    {
+        yield return new WaitForSeconds(7);
+        Debug.Log("Wait 7s");
+        playable = true;
     }
 }
