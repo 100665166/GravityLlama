@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
     {
         if (c.gameObject.tag == "TerrainWall")
         {
-            Debug.Log("Llama is on the ground.");
+            //Debug.Log("Llama is on the ground.");
             IsGrounded = true;
 
             if (ls.IsChangingLane)
@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
     {
         if (c.gameObject.tag == "TerrainWall")
         {
-            Debug.Log("Llama is in the air.");
+            //Debug.Log("Llama is in the air.");
 
             // Disable further and lane switching
             IsGrounded = false;

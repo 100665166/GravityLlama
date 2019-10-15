@@ -83,6 +83,11 @@ public class LanesSystem : MonoBehaviour
     private Player player;
     private Rigidbody rb;
     private LaneMagnet lm;
+    public float speed = 50;
+    double wpRadius = .02;
+    double wpReset = .0002;
+    int currentWp = 0;
+    public List<Vector3> waypoints;
 
     // ********************************************************************************************************
 
@@ -160,42 +165,44 @@ public class LanesSystem : MonoBehaviour
         //// Jump to right lane
         //if (Input.GetKeyDown(KeyCode.D))
         //{
-        //    Debug.Log("D down:");
-        //    Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
+        //    //Debug.Log("D down:");
+        //   //Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
         //    ChangeLane('R');
-        //    Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
+        //    //Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
         //}
 
         //// Jump to left lane
         //if (Input.GetKeyDown(KeyCode.A))
         //{
-        //    Debug.Log("A down:");
-        //    Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
+        //    //Debug.Log("A down:");
+        //    //Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
         //    ChangeLane('L');
-        //    Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
+        //    //Debug.Log("Clane:" + cLane + " currentLane:" + currentLane);
         //}
 
         //trying to allow for held down presses
         //using if (Mathf.Abs(currentLane.transform.position.x - player.transform.position.x) < x) to prevent holding down keys
         //to continuely add force in changelane addforce making u jump beyond the next lane.
         //isChangingLane bool seems to not be preventing this.
-            //Debug.Log("!isChangingLaneUpdate");
+        //Debug.Log("!isChangingLaneUpdate");
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            Debug.Log("Horizontal>0=" + Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)));
+            //Debug.Log("Horizontal>0=" + Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)));
             if (Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)) < .3)
             {
                 ChangeLane('R');
-                Debug.Log("Update X:X close enough");
+                //Debug.Log(waypoints.Count);
+                //Debug.Log("Update X:X close enough");
             }
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            Debug.Log("Horizontal<0="+ Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)));
+            //Debug.Log("Horizontal<0="+ Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)));
             if (Mathf.Abs(Math.Abs(currentLane.transform.position.x) - Mathf.Abs(player.transform.position.x)) < .3)
             {
+               //Debug.Log(waypoints.Count);
                 ChangeLane('L');
-                Debug.Log("Update X:X close enough");
+                //Debug.Log("Update X:X close enough");
             }
         }
         //reset player velocity when x reaches lane x
@@ -204,6 +211,10 @@ public class LanesSystem : MonoBehaviour
         //    Debug.Log("Reset rb vvelocity: player x is close to lane x" + Mathf.Abs(currentLane.transform.position.x - player.transform.position.x));
         //    //rb.velocity = Vector3.zero;
         //}
+        if (waypoints.Count> 0)
+        {
+            TranslateWaypoint();
+        }
     }
 
     // ********************************************************************************************************
@@ -211,7 +222,7 @@ public class LanesSystem : MonoBehaviour
     void FixedUpdate()
     {
         // We need this to be constantly running so that the llama "sticks" to the lane
-        MoveToLane(currentLane);
+        //MoveToLane(currentLane);
     }
 
     // ********************************************************************************************************
@@ -225,6 +236,7 @@ public class LanesSystem : MonoBehaviour
         // Cannot already be changing lane AND must not be mid-air
         if (!IsChangingLane && player.IsGrounded)
         {
+            Debug.Log("Llama is now on the <color=red>" + cLane + "</color> lane" + " Direction:"+direction);
             switch (direction)
             {
                 case 'L':   // For moving to lanes left of the player's current position
@@ -234,19 +246,31 @@ public class LanesSystem : MonoBehaviour
                         case Lanes.left:
                             break;
                         case Lanes.centreLeft:
-                            rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            //rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            GetWaypoints("LCLarc",direction);
                             currentLane = leftLane;
+                            //waypoints.Add(GameObject.Find("LCLarc"));
+                            //waypoints.Add(GameObject.Find("LeftLane"));
+                            //Debug.Log("ChangeLanewp:" + waypoints[0] + " : " + waypoints[1]);
                             cLane = Lanes.left;
                             break;
                         case Lanes.centreRight:
-                            rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            // rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            GetWaypoints("CLCRarc", direction);
                             currentLane = centreLeftLane;
                             cLane = Lanes.centreLeft;
+                            //waypoints.Add(GameObject.Find("CLCRarc"));
+                            //waypoints.Add(GameObject.Find("CentreLeftLane"));
+                            //Debug.Log("ChangeLanewp:" + waypoints[0] + " : " + waypoints[1]);
                             break;
                         case Lanes.right:
-                            rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            //rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            GetWaypoints("CRRarc", direction);
                             currentLane = centreRightLane;
                             cLane = Lanes.centreRight;
+                            //waypoints.Add(GameObject.Find("CRRarc"));
+                            //waypoints.Add(GameObject.Find("CentreRightLane"));
+                            //Debug.Log("ChangeLanewp:" + waypoints[0] + " : " + waypoints[1]);
                             break;
                         default:
                             break;
@@ -257,19 +281,31 @@ public class LanesSystem : MonoBehaviour
                     switch (cLane)
                     {
                         case Lanes.left:
-                            rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            //rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            GetWaypoints("LCLarc", direction);
                             currentLane = centreLeftLane;
                             cLane = Lanes.centreLeft;
+                            //waypoints.Add(GameObject.Find("LCLarc"));
+                            //waypoints.Add(GameObject.Find("CentreLeftLane"));
+                            //Debug.Log("ChangeLanewp:" + waypoints[0] + " : " + waypoints[1]);
                             break;
                         case Lanes.centreLeft:
-                            rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            //rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            GetWaypoints("CLCRarc", direction);
                             currentLane = centreRightLane;
                             cLane = Lanes.centreRight;
+                            //waypoints.Add(GameObject.Find("CLCRarc"));
+                            //waypoints.Add(GameObject.Find("CentreRightLane"));
+                            //Debug.Log("ChangeLanewp:" + waypoints[0] + " : " + waypoints[1]);
                             break;
                         case Lanes.centreRight:
-                            rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            //rb.AddForce(Vector3.up * player.GetJumpStrength);
+                            GetWaypoints("CRRarc", direction);
                             currentLane = rightLane;
                             cLane = Lanes.right;
+                            //waypoints.Add(GameObject.Find("CRRarc"));
+                            //waypoints.Add(GameObject.Find("RightLane"));
+                            //Debug.Log("ChangeLanewp:" + waypoints[0] + " : " + waypoints[1]);
                             break;
                         case Lanes.right:
                             break;
@@ -339,6 +375,78 @@ public class LanesSystem : MonoBehaviour
                     break;
                 default:
                     break;
+            }
+        }
+    }
+
+    public void GetWaypoints(string pArc, char pDir)
+    {
+        //grab the arc object that contains childs 1-5 waypoints
+        //L = 1-5 , R = 5-1
+        GameObject arc = GameObject.Find(pArc);
+        foreach (Transform child in arc.transform)
+        {
+            waypoints.Add(child.transform.position);
+        }
+        if (pDir == 'L')
+        {
+            waypoints.Reverse();
+        }
+        Debug.Log("GetWayPoints:\n");
+        foreach( Transform child in arc.transform)
+        {
+            Debug.Log(child +" : "+ child.transform.position);
+        }
+    }
+    /// <summary>
+    /// waypoint translation lane movement
+    /// </summary>
+    public void TranslateWaypoint()
+    {
+        ////This segment used for GameObjects
+        //if (waypoints.Count>0)
+        //{
+        //    Debug.Log(waypoints[0] + "   :    " + waypoints[1] + "distance:"+ Vector3.Distance(waypoints[currentWp].transform.position, player.transform.position));
+        //    if (Vector3.Distance(waypoints[currentWp].transform.position, player.transform.position) < wpRadius)
+        //    {
+        //        Debug.Log("waypoint ++");
+        //        currentWp++;
+        //        if (currentWp >= waypoints.Count)
+        //        {
+        //            currentWp = 0;
+        //            Debug.Log("resetWP:" + currentWp);
+        //        }
+        //    }
+        //    player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[currentWp].transform.position, Time.deltaTime * speed);
+        //    rb.MovePosition(waypoints[currentWp].transform.position);
+        //    if (Vector3.Distance(waypoints[waypoints.Count-1].transform.position, player.transform.position) < wpReset)
+        //    {
+        //        waypoints.Clear();
+        //        Debug.Log("waypoint.Clear" + "\n count is now:" + waypoints.Count);
+        //    }
+        //}
+        //using game object child's transform
+        if (waypoints.Count > 0)
+        {
+            //Debug.Log(waypoints[0] + "   :    " + waypoints[1] + "distance:" + Vector3.Distance(waypoints[currentWp], player.transform.position));
+            Debug.Log("player.pos:" + player.transform.position + "\nHeadingToWp"+currentWp+":"+waypoints[currentWp]);
+            if (Vector3.Distance(waypoints[currentWp], player.transform.position) < wpRadius)
+            {
+                Debug.Log(currentWp+" waypoint ++"+ waypoints.Count);
+                currentWp++;
+                if (currentWp >= waypoints.Count)
+                {
+                    currentWp = 0;
+                    Debug.Log("resetWP:" + currentWp);
+                }
+            }
+            player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[currentWp], Time.deltaTime * speed);
+            rb.MovePosition(waypoints[currentWp]);
+            if (Vector3.Distance(waypoints[waypoints.Count - 1], player.transform.position) < wpReset)
+            {
+                waypoints.Clear();
+                currentWp = 0;
+                Debug.Log("waypoint.Clear" + "\n count is now:" + waypoints.Count +"\ncurrentWp:"+currentWp);
             }
         }
     }
