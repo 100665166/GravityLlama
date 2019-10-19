@@ -7,6 +7,7 @@ public class TranslateMove : MonoBehaviour
 {
     public double boundsLeft;
     public double boundsRight;
+    public float turnSpeed = 0.75f;
 
 
     // Start is called before the first frame update
@@ -19,15 +20,23 @@ public class TranslateMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(transform.localRotation + " locRot:Rot" + transform.rotation.eulerAngles);
         if (Input.GetAxisRaw("Horizontal")<0)
         {
-            //transform.Rotate(new Vector3(0, -.5f, 0));
+            //limit the rotation left
+            if (transform.rotation.eulerAngles.y >256)
+            {
+                transform.Rotate(new Vector3(0, -turnSpeed, 0));
+            }
+            //translate left
             if (transform.position.x > boundsLeft)
                 transform.Translate(Vector3.left * 5 * Time.deltaTime, Space.World);
         }
         else if (Input.GetAxisRaw("Horizontal") >0)
         {
-            //transform.Rotate(new Vector3(0, .5f, 0));
+            //limit the rotation left
+            if (transform.rotation.eulerAngles.y < 284)
+                transform.Rotate(new Vector3(0, turnSpeed, 0));
             if (transform.position.x < boundsRight)
                 transform.Translate(Vector3.right * 5 * Time.deltaTime, Space.World);
         }

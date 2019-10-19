@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Archived\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\BaseClasses\PickupBase.cs" />
+     <Compile Include="Assets\Scripts\CameraStabliser.cs" />
      <Compile Include="Assets\Scripts\Debug\Cheats.cs" />
      <Compile Include="Assets\Scripts\GoalEndLevel.cs" />
      <Compile Include="Assets\Scripts\GravityLevel.cs" />
