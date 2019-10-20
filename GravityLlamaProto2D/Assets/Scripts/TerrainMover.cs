@@ -38,6 +38,7 @@
  * 25-09    It is now possible to increase/decrease speed of level cycling
  * 25-09    Temporarily disabled script again due to bugs
  * 06-10    CycleTerrain no longer segmented, levels move linearly as one giant prefab
+ * 19-10    Dynamic speed change in CycleTerrain disabled and hidden again
  * 
  * =============================================================================
  */
@@ -68,17 +69,15 @@ public class TerrainMover : MonoBehaviour
     public GameObject goal;
 
     [Header("OPTIONS")]
-    [Tooltip("Select how fast the stage will cycle at the start.\nHigher or lower gravity levels can auto-affect this as well.")]
     [SerializeField]
+    private float partMoveSpeed = 10f;   // Actual movement speed of level prefab based on cyclingSpeed
+
+    [Tooltip("Select how fast the stage will cycle at the start.\nHigher or lower gravity levels can auto-affect this as well.")]
     private LevelSpeed cyclingSpeed = LevelSpeed.Medium;    // We'll default to Medium since gravityLevel is usually always at 5 anyway
     [Tooltip("Can gravity affect the speed at which parts 'move'?\n\nIf this flag is disabled, the speed at which levels cycle will be fixed for the entirety of this level (specifically).")]
+    private bool gravityAffectsSpeed = false; // Does gravity make the level go faster, Y/N?
 
-    [SerializeField]
-    private bool gravityAffectsSpeed = true; // Does gravity make the level go faster, Y/N?
-    [SerializeField]
-    private float partMoveSpeed = 1f;   // Actual movement speed of level prefab based on cyclingSpeed
     private bool endOfLevel = false;    // Have we reached our goal yet?
-
     private GameObject gm;
     private GameObject player;
 

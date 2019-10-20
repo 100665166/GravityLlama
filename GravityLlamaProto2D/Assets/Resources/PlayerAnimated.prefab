@@ -920,7 +920,6 @@ GameObject:
   - component: {fileID: 2257941563669420647}
   - component: {fileID: 2257941563676715484}
   - component: {fileID: 2257941563676715486}
-  - component: {fileID: 2257941563676715472}
   - component: {fileID: 2257941563676715474}
   - component: {fileID: 2257941563676715476}
   m_Layer: 0
@@ -993,25 +992,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpStrength: 1000
---- !u!114 &2257941563676715472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2257941563676715477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96d4f92478009e54ea3a089e815f6624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftLane: {fileID: 0}
-  centreLeftLane: {fileID: 0}
-  centreRightLane: {fileID: 0}
-  rightLane: {fileID: 0}
-  startingLane: {fileID: 0}
-  speed: 50
-  waypoints: []
 --- !u!54 &2257941563676715474
 Rigidbody:
   m_ObjectHideFlags: 0

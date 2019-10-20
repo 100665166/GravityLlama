@@ -11,9 +11,9 @@ public class CameraStabliser : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("PlayerAnimated");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-    // Update is called once per frame
+
     void Update()
     {
         playerX = player.transform.eulerAngles.x;
