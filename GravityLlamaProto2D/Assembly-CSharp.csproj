@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Archived\Movement.cs" />
     <Compile Include="Assets\Scripts\Archived\Pickup.cs" />
     <Compile Include="Assets\Scripts\Archived\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Archived\RotateTerrain.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\PickupBase.cs" />
     <Compile Include="Assets\Scripts\CameraStabliser.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\Pickups\LowersGravityPickup.cs" />
     <Compile Include="Assets\Scripts\Pickups\PickupGenerator.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\RotateCameraZone.cs" />
     <Compile Include="Assets\Scripts\ScoringSystem.cs" />
     <Compile Include="Assets\Scripts\SpaceToPlay.cs" />
     <Compile Include="Assets\Scripts\TerrainMover.cs" />
