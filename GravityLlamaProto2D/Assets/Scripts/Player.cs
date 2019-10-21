@@ -141,7 +141,9 @@ public class Player : MonoBehaviour
     {
         if (IsGrounded)
         {
-            // Slightly more powerful jump if we're on medium/high gravity
+            rb.AddForce(Vector3.up * jumpStrength);
+
+            /*// Slightly more powerful jump if we're on medium/high gravity
             if (gm.GetComponent<GravityLevel>().SetGravityLevel > 5)
             {
                 rb.AddForce(Vector3.up * (jumpStrength * 2));
@@ -155,7 +157,7 @@ public class Player : MonoBehaviour
             {
                 // Default power if gravity is regarded as "normal"
                 rb.AddForce(Vector3.up * jumpStrength);
-            }
+            }*/
 
             // Technically not needed but for safety, this will prevent any further jumping until we land
             IsGrounded = false;
