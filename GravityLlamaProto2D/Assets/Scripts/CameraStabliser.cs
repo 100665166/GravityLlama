@@ -14,13 +14,13 @@ public class CameraStabliser : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void Update()
+    void LateUpdate()
     {
         playerX = player.transform.eulerAngles.x;
         //we want the y axis 0 
         playerY = 0;
         playerZ = player.transform.eulerAngles.z;
         //counter the rotation to keep the cube fixed
-        transform.eulerAngles = new Vector3(playerX - playerX, playerY,playerZ- playerZ);
+        transform.eulerAngles = new Vector3(playerX , playerY,playerZ);
     }
 }
