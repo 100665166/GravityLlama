@@ -14,15 +14,19 @@ public class SpaceToPlay : MonoBehaviour
     //    }
     //}
     bool playable = false;
+    
+    GameObject spaceButton;
     void Start()
     {
         StartCoroutine(PauseTutorial());
+        spaceButton = GameObject.Find("Canvas/LoadingScreen/SpaceToContinue");
     }
 
     void Update()
     {
         if (playable)
         {
+            spaceButton.SetActive(true);
             if (Input.GetKeyDown("space"))
             {
                 Debug.Log("SpaceToPlay");
@@ -33,7 +37,7 @@ public class SpaceToPlay : MonoBehaviour
 
     IEnumerator PauseTutorial()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(4);
         Debug.Log("Wait 7s");
         playable = true;
     }

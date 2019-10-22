@@ -10,6 +10,7 @@ TagManager:
   - Waypoint
   - GravityStatusBar
   - GameManager
+  - SpaceButton
   layers:
   - Default
   - TransparentFX
