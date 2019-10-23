@@ -55,7 +55,7 @@ public class AddsGravityPickup : PickupBase
         {
             AudioSource.PlayClipAtPoint(gm.GetComponent<AudioManager>().positivePickupSound, c.transform.position, 1f);
             //gm.GetComponent<AdjustGravity>().IncreaseGravity();
-            gm.GetComponent<ScoringSystem>().currentScore++;
+            gm.GetComponent<ScoringSystem>().currentScore += 1000;
             Destroy(gameObject);
         }
     }

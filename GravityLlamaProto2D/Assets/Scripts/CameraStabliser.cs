@@ -21,6 +21,6 @@ public class CameraStabliser : MonoBehaviour
         playerY = 0;
         playerZ = player.transform.eulerAngles.z;
         //counter the rotation to keep the cube fixed
-        transform.eulerAngles = new Vector3(playerX , playerY,playerZ);
+        transform.eulerAngles = new Vector3(playerX - playerX , playerY,playerZ-playerZ);
     }
 }
