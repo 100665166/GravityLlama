@@ -38,6 +38,7 @@
  * 18-09    Added support for lane switching, jumpStrength properties
  * 06-10    Fixed missing (?) IsPlayerJumping variable
  * 19-10    Lane switching behaviours/conditions removed
+ * 23-10    Player drags upon entering a trigger zone
  * 
  * =============================================================================
  */
@@ -58,7 +59,10 @@ public class Player : MonoBehaviour
     // For checking whether the llama can jump again or not
     private bool isGrounded = false;
     private bool isJumping = false;
+    // For checking whether the llama gets dragged into the ground
+    private bool canPull = false;
 
+    private GameObject magnet;
     private GameObject gm;
     private Rigidbody rb;
 
@@ -68,12 +72,14 @@ public class Player : MonoBehaviour
     public float SetJumpStrength { set => jumpStrength = value; }
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
     public bool IsJumping { get => isJumping; set => isJumping = value; }
+    public bool CanPull { get => canPull; set => canPull = value; }
 
     // ********************************************************************************************************
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        magnet = GameObject.FindGameObjectWithTag("Waypoint");
 
         try
         {
@@ -94,6 +100,17 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+        }
+    }
+
+    // ********************************************************************************************************
+
+    void FixedUpdate()
+    {
+        if (canPull)
+        {
+            // Make them fall to the ground quickly
+            rb.AddForce((magnet.transform.position - transform.position) * 1000f * Time.smoothDeltaTime);
         }
     }
 
