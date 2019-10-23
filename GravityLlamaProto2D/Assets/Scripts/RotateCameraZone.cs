@@ -89,11 +89,10 @@ public class RotateCameraZone : MonoBehaviour
             cam.transform.Rotate(new Vector3(angle, 0, 0));
             col.GetComponent<Player>().SetJumpStrength = playerNewJumpStrength;
 
-            // Don't make us drop to the ground if we're jumping
-            if (heavyZone && !col.GetComponent<Player>().IsJumping)
+            // Force us back to the ground if this trigger is near a drop
+            if (heavyZone)
             {
-                // Make them fall to the ground quickly
-                col.GetComponent<Rigidbody>().AddForce((transform.position - col.transform.position) * 20000f * Time.smoothDeltaTime);
+                col.GetComponent<Player>().CanPull = true;
             }
         }
     }
