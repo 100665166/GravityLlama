@@ -32,6 +32,8 @@
  * Changelog:
  * 08-09    Initial
  * 08-10    Added sound effect parameter
+ * 19-10    Fixed SFX being too quiet
+ * 21-10    Disabled gravity changes upon pickup
  * 
  * =============================================================================
  */
@@ -51,8 +53,8 @@ public class AddsGravityPickup : PickupBase
     {
         if (c.gameObject.CompareTag("Player"))
         {
-            AudioSource.PlayClipAtPoint(gm.GetComponent<AudioManager>().positivePickupSound, c.transform.position);
-            gm.GetComponent<AdjustGravity>().IncreaseGravity();
+            AudioSource.PlayClipAtPoint(gm.GetComponent<AudioManager>().positivePickupSound, c.transform.position, 1f);
+            //gm.GetComponent<AdjustGravity>().IncreaseGravity();
             gm.GetComponent<ScoringSystem>().currentScore++;
             Destroy(gameObject);
         }

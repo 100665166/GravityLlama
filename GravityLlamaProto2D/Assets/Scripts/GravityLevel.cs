@@ -33,6 +33,7 @@
  * 17-08    Initial
  * 11-09    Tweaked to support properties
  * 25-09    Added support for UI gauge bar display
+ * 21-10    Added range limits to prevent gravity from going overboard
  * 
  * =============================================================================
  */
@@ -49,6 +50,7 @@ public class GravityLevel : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Use this to determine how much gravity is currently within the scene.")]
+    [Range(0f, 10f)]
     private float gravityLevel = 5f;
 
     // For UI elements

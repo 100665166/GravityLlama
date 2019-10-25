@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5830924962948679428}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: EditorOnly
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,8 +89,8 @@ MonoBehaviour:
   partToCycle: {fileID: 0}
   goal: {fileID: 0}
   cyclingSpeed: 2
-  gravityAffectsSpeed: 1
-  partMoveSpeed: 1
+  gravityAffectsSpeed: 0
+  partMoveSpeed: 30
 --- !u!114 &5830924962948679428
 MonoBehaviour:
   m_ObjectHideFlags: 0

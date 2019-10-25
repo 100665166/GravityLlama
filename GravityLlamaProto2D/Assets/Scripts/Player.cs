@@ -28,7 +28,6 @@
  * 
  * Dependencies:
  * GravityLevel.cs
- * LanesSystem.cs
  * 
  * 
  * Changelog:
@@ -38,6 +37,7 @@
  * 11-09    Added properties and several new functions
  * 18-09    Added support for lane switching, jumpStrength properties
  * 06-10    Fixed missing (?) IsPlayerJumping variable
+ * 19-10    Lane switching behaviours/conditions removed
  * 
  * =============================================================================
  */
@@ -60,7 +60,6 @@ public class Player : MonoBehaviour
     private bool isJumping = false;
 
     private GameObject gm;
-    private LanesSystem ls;
     private Rigidbody rb;
 
     // ********************************************************************************************************
@@ -74,7 +73,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        ls = GetComponent<LanesSystem>();
         rb = GetComponent<Rigidbody>();
 
         try
@@ -89,7 +87,7 @@ public class Player : MonoBehaviour
 
     // ********************************************************************************************************
 
-    private void Update()
+    void Update()
     {
         rb.drag = gm.GetComponent<GravityLevel>().SetGravityLevel;
 
@@ -116,14 +114,8 @@ public class Player : MonoBehaviour
     {
         if (c.gameObject.tag == "TerrainWall")
         {
-            Debug.Log("Llama is on the ground.");
+            //Debug.Log("Llama is on the ground.");
             IsGrounded = true;
-
-            if (ls.IsChangingLane)
-            {
-                // Player can also change lanes again since they're grounded once more too
-                ls.IsChangingLane = false;
-            }
         }
     }
 
@@ -134,25 +126,24 @@ public class Player : MonoBehaviour
     {
         if (c.gameObject.tag == "TerrainWall")
         {
-            Debug.Log("Llama is in the air.");
-
-            // Disable further and lane switching
+            //Debug.Log("Llama is in the air.");
             IsGrounded = false;
-            ls.IsChangingLane = true;
         }
     }
 
     // ********************************************************************************************************
 
     // Jump
-    // Llama hops into the air (same lane only)
+    // Llama hops into the air
     // Takes: Nothing
     // Returns: Nothing
     public void Jump()
     {
-        if (IsGrounded && !ls.IsChangingLane)
+        if (IsGrounded)
         {
-            // Slightly more powerful jump if we're on medium/high gravity
+            rb.AddForce(Vector3.up * jumpStrength);
+
+            /*// Slightly more powerful jump if we're on medium/high gravity
             if (gm.GetComponent<GravityLevel>().SetGravityLevel > 5)
             {
                 rb.AddForce(Vector3.up * (jumpStrength * 2));
@@ -166,7 +157,7 @@ public class Player : MonoBehaviour
             {
                 // Default power if gravity is regarded as "normal"
                 rb.AddForce(Vector3.up * jumpStrength);
-            }
+            }*/
 
             // Technically not needed but for safety, this will prevent any further jumping until we land
             IsGrounded = false;

@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: 12f617b9928378b4f8b24b6c62ffd4a0
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Line004
+    100004: Mountain006
+    100006: Mountain007
+    100008: Mountain008
+    100010: Mountain009
+    100012: Mountain010
+    100014: Mountain011
+    100016: Mountain012
+    100018: Mountain013
+    100020: Mountain014
+    100022: Mountain015
+    100024: Mountain016
+    100026: Mountain1
+    100028: Mountain2
+    100030: Mountain3
+    100032: Mountain4
+    100034: Mountain5
+    400000: //RootNode
+    400002: Line004
+    400004: Mountain006
+    400006: Mountain007
+    400008: Mountain008
+    400010: Mountain009
+    400012: Mountain010
+    400014: Mountain011
+    400016: Mountain012
+    400018: Mountain013
+    400020: Mountain014
+    400022: Mountain015
+    400024: Mountain016
+    400026: Mountain1
+    400028: Mountain2
+    400030: Mountain3
+    400032: Mountain4
+    400034: Mountain5
+    2100000: 14 - Default
+    2100002: 15 - Default
+    2300000: Line004
+    2300002: Mountain006
+    2300004: Mountain007
+    2300006: Mountain008
+    2300008: Mountain009
+    2300010: Mountain010
+    2300012: Mountain011
+    2300014: Mountain012
+    2300016: Mountain013
+    2300018: Mountain014
+    2300020: Mountain015
+    2300022: Mountain016
+    2300024: Mountain1
+    2300026: Mountain2
+    2300028: Mountain3
+    2300030: Mountain4
+    2300032: Mountain5
+    3300000: Line004
+    3300002: Mountain006
+    3300004: Mountain007
+    3300006: Mountain008
+    3300008: Mountain009
+    3300010: Mountain010
+    3300012: Mountain011
+    3300014: Mountain012
+    3300016: Mountain013
+    3300018: Mountain014
+    3300020: Mountain015
+    3300022: Mountain016
+    3300024: Mountain1
+    3300026: Mountain2
+    3300028: Mountain3
+    3300030: Mountain4
+    3300032: Mountain5
+    4300000: Line004
+    4300002: Mountain1
+    4300004: Mountain2
+    4300006: Mountain3
+    4300008: Mountain4
+    4300010: Mountain5
+    4300012: Mountain006
+    4300014: Mountain007
+    4300016: Mountain008
+    4300018: Mountain009
+    4300020: Mountain010
+    4300022: Mountain011
+    4300024: Mountain012
+    4300026: Mountain013
+    4300028: Mountain014
+    4300030: Mountain015
+    4300032: Mountain016
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
