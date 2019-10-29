@@ -10,7 +10,6 @@ public class TranslateMove : MonoBehaviour
     public float turnSpeed = 0.75f;
     public float sideSpeed = 8f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +34,24 @@ public class TranslateMove : MonoBehaviour
         }
         else if (Input.GetAxisRaw("Horizontal") >0)
         {
-            //limit the rotation left
+            //limit the rotation Right
             if (transform.rotation.eulerAngles.y < 284)
                 transform.Rotate(new Vector3(0, turnSpeed, 0));
             if (transform.position.x < boundsRight)
                 transform.Translate(Vector3.right * sideSpeed * Time.deltaTime, Space.World);
+        }
+        else if (Input.GetAxisRaw("Horizontal") ==0 && (transform.rotation.eulerAngles.y != 270))
+        {
+            if (transform.rotation.eulerAngles.y < 269.5)
+            {
+                Debug.Log("RotateBack:Right");
+                transform.Rotate(new Vector3(0, turnSpeed * .80f, 0));
+            }
+            else if (transform.rotation.eulerAngles.y > 270.5)
+            {
+                Debug.Log("RotateBack:Left");
+                transform.Rotate(new Vector3(0, -turnSpeed * .80f, 0));
+            }
         }
     }
 }
