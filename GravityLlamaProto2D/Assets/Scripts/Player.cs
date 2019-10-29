@@ -56,12 +56,13 @@ public class Player : MonoBehaviour
     [Tooltip("Determines how high the player can jump.")]
     private float jumpStrength = 1000f;
 
-    // For checking whether the llama can jump again or not
+    // Specific jumping-related flags
     private bool isGrounded = false;
     private bool isJumping = false;
 
     // Flags
     private bool isBeingDragged = false;
+    private bool isLowGravity = false;
 
     private GameObject gm;
     private Rigidbody rb;
@@ -75,6 +76,8 @@ public class Player : MonoBehaviour
     public bool IsJumping { get => isJumping; set => isJumping = value; }
     public bool IsBeingDragged { get => isBeingDragged; }
     public bool SetDragState { set => isBeingDragged = value; }
+    public bool IsLowGravity { get => isLowGravity; }
+    public bool SetLowGravityState { set => isLowGravity = value; }
 
     // ********************************************************************************************************
 
@@ -160,7 +163,16 @@ public class Player : MonoBehaviour
     {
         if (IsGrounded)
         {
-            rb.AddForce(Vector3.up * jumpStrength);
+            if (IsLowGravity)
+            {
+                // Need a very strong jump on low gravity levels
+                rb.AddForce(Vector3.up * (jumpStrength * 3));
+            }
+            else if (gm.GetComponent<GravityLevel>().SetGravityLevel < 2)
+            {
+                rb.AddForce(Vector3.up * jumpStrength);
+            }
+
 
             /*// Slightly more powerful jump if we're on medium/high gravity
             if (gm.GetComponent<GravityLevel>().SetGravityLevel > 5)

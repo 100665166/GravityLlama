@@ -32,6 +32,7 @@
  * Changelog:
  * 21-10    Initial
  * 29-10    Shifted dragging functionality to GravityTriggerZone
+ * 30-10    Added range limits to prevent camera from clipping
  * 
  * =============================================================================
  */
@@ -43,6 +44,7 @@ using UnityEngine;
 public class RotateCameraZone : MonoBehaviour
 {
     [Tooltip("What angle should the camera rotate to?")]
+    [Range(-12, 12)]    // Should never be more than 12...
     public float angle = 0f;
 
     [Tooltip("How much does the player's jump get boosted? (to accomodate for height slopes)")]
