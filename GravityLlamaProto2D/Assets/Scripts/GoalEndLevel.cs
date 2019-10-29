@@ -28,6 +28,7 @@
  * Dependencies:
  * TerrainMover.cs
  * ScoringSystem.cs
+ * HighScoresScreen.cs
  * 
  * 
  * Changelog:
@@ -65,6 +66,14 @@ public class GoalEndLevel : MonoBehaviour
         }
     }
 
+    // ********************************************************************************************************
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawCube(transform.position, new Vector3(20, 20, 20));
+    }
+
     // ========================================================================================================
     // ********************************************************************************************************
     // ========================================================================================================
@@ -86,11 +95,18 @@ public class GoalEndLevel : MonoBehaviour
             gm.GetComponent<TerrainMover>().HasFinishedLevel = true;
 
             // Pass SaveScore the name of the scene (SaveScore handles the actual score saving)
-            gm.GetComponent<ScoringSystem>().SaveScore(SceneManager.GetActiveScene().name.ToString());
-            Debug.Log("Saving high score...");
+            //gm.GetComponent<ScoringSystem>().SaveScore(SceneManager.GetActiveScene().name.ToString());
+            //Debug.Log("Saving high score...");
 
-            //SceneManager.LoadScene("Level1");   // Temp
-            SceneManager.LoadScene(changeToLevel);
+            // Temp
+            //SceneManager.LoadScene("Level1");
+            //SceneManager.LoadScene(changeToLevel);
+
+            // Tell ScoringSystem to save the final score
+            gm.GetComponent<ScoringSystem>().SaveScore();
+
+            // Then initiate fade out in HighScoresScreen
+            gm.GetComponent<HighScoresScreen>().EndGame();
         }
     }
 }

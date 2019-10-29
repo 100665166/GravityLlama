@@ -31,6 +31,7 @@
  * 
  * Changelog:
  * 21-10    Initial
+ * 29-10    Shifted dragging functionality to GravityTriggerZone
  * 
  * =============================================================================
  */
@@ -46,9 +47,6 @@ public class RotateCameraZone : MonoBehaviour
 
     [Tooltip("How much does the player's jump get boosted? (to accomodate for height slopes)")]
     public float playerNewJumpStrength = 5000f;
-
-    [Tooltip("Will the player's weight increase dramatically at this zone? (to compensate for steep inclines)")]
-    public bool heavyZone = false;
 
     // For the MainCamera
     private GameObject cam;
@@ -88,13 +86,6 @@ public class RotateCameraZone : MonoBehaviour
             //cam.transform.Rotate(new Vector3(angle, 0, 0));
             cam.transform.Rotate(new Vector3(angle, 0, 0));
             col.GetComponent<Player>().SetJumpStrength = playerNewJumpStrength;
-
-            // Don't make us drop to the ground if we're jumping
-            if (heavyZone && !col.GetComponent<Player>().IsJumping)
-            {
-                // Make them fall to the ground quickly
-                col.GetComponent<Rigidbody>().AddForce((transform.position - col.transform.position) * 20000f * Time.smoothDeltaTime);
-            }
         }
     }
 }

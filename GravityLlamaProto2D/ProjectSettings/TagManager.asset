@@ -11,6 +11,11 @@ TagManager:
   - GravityStatusBar
   - GameManager
   - SpaceButton
+  - Puller
+  - RankingCounter
+  - HighScoreContainer
+  - HighScoreTemplate
+  - HighScoreTable
   layers:
   - Default
   - TransparentFX

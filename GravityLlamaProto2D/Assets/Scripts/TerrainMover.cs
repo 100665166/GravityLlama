@@ -39,6 +39,7 @@
  * 25-09    Temporarily disabled script again due to bugs
  * 06-10    CycleTerrain no longer segmented, levels move linearly as one giant prefab
  * 19-10    Dynamic speed change in CycleTerrain disabled and hidden again
+ * 29-10    Functionality for end of level transitions
  * 
  * =============================================================================
  */
@@ -216,7 +217,7 @@ public class TerrainMover : MonoBehaviour
 
         // Scene transition stuff blah blah blah
         endOfLevel = true;
-        Debug.Log("<color=yellow>YOU WIN!</color>");
+        //Debug.Log("<color=yellow>YOU WIN!</color>");
     }
 
     // ********************************************************************************************************

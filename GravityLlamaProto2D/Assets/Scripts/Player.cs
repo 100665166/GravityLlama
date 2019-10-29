@@ -38,6 +38,7 @@
  * 18-09    Added support for lane switching, jumpStrength properties
  * 06-10    Fixed missing (?) IsPlayerJumping variable
  * 19-10    Lane switching behaviours/conditions removed
+ * 29-10    Heavy gravity to prevent llama "flying"
  * 
  * =============================================================================
  */
@@ -59,8 +60,12 @@ public class Player : MonoBehaviour
     private bool isGrounded = false;
     private bool isJumping = false;
 
+    // Flags
+    private bool isBeingDragged = false;
+
     private GameObject gm;
     private Rigidbody rb;
+    private GameObject puller;  // Needed to prevent the llama from "flying"
 
     // ********************************************************************************************************
 
@@ -68,12 +73,15 @@ public class Player : MonoBehaviour
     public float SetJumpStrength { set => jumpStrength = value; }
     public bool IsGrounded { get => isGrounded; set => isGrounded = value; }
     public bool IsJumping { get => isJumping; set => isJumping = value; }
+    public bool IsBeingDragged { get => isBeingDragged; }
+    public bool SetDragState { set => isBeingDragged = value; }
 
     // ********************************************************************************************************
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        puller = GameObject.FindGameObjectWithTag("Puller");
 
         try
         {
@@ -94,6 +102,17 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
+        }
+    }
+
+    // ********************************************************************************************************
+
+    void FixedUpdate()
+    {
+        // This is only performed when the llama needs to be pulled back towards the level's terrain
+        if (isBeingDragged)
+        {
+            rb.AddForce((puller.transform.position - transform.position) * 10000f * Time.smoothDeltaTime);
         }
     }
 
@@ -162,6 +181,17 @@ public class Player : MonoBehaviour
             // Technically not needed but for safety, this will prevent any further jumping until we land
             IsGrounded = false;
         }
+    }
+
+    // ********************************************************************************************************
+
+    // DropInstantly
+    // Makes the llama fall quickly (one shot behaviour)
+    // Takes: Nothing
+    // Returns: Nothing
+    public void DropInstantly()
+    {
+        rb.AddForce((puller.transform.position - transform.position) * 10000f);
     }
 
     // ********************************************************************************************************

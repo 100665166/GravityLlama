@@ -21,7 +21,7 @@ public class TranslateMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.localRotation + " locRot:Rot" + transform.rotation.eulerAngles);
+        //Debug.Log(transform.localRotation + " locRot:Rot" + transform.rotation.eulerAngles);
         if (Input.GetAxisRaw("Horizontal")<0)
         {
             //limit the rotation left
@@ -45,12 +45,12 @@ public class TranslateMove : MonoBehaviour
         {
             if (transform.rotation.eulerAngles.y < 269.5)
             {
-                Debug.Log("RotateBack:Right");
+                //Debug.Log("RotateBack:Right");
                 transform.Rotate(new Vector3(0, turnSpeed * .80f, 0));
             }
             else if (transform.rotation.eulerAngles.y > 270.5)
             {
-                Debug.Log("RotateBack:Left");
+                //Debug.Log("RotateBack:Left");
                 transform.Rotate(new Vector3(0, -turnSpeed * .80f, 0));
             }
         }
