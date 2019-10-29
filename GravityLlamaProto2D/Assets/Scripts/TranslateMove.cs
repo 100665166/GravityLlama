@@ -41,5 +41,18 @@ public class TranslateMove : MonoBehaviour
             if (transform.position.x < boundsRight)
                 transform.Translate(Vector3.right * sideSpeed * Time.deltaTime, Space.World);
         }
+        else if (Input.GetAxisRaw("Horizontal") == 0 && (transform.rotation.eulerAngles.y != 270))
+        {
+            if (transform.rotation.eulerAngles.y < 269.5)
+            {
+                Debug.Log("RotateBack:Right");
+                transform.Rotate(new Vector3(0, turnSpeed * .80f, 0));
+            }
+            else if (transform.rotation.eulerAngles.y > 270.5)
+            {
+                Debug.Log("RotateBack:Left");
+                transform.Rotate(new Vector3(0, -turnSpeed * .80f, 0));
+            }
+        }
     }
 }
