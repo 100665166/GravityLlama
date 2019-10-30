@@ -38,12 +38,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
+    public AudioMixer MainMixer;
+    public float volume;
     public AudioClip negativePickupSound;
     public AudioClip positivePickupSound;
 
+    private void Start()
+    {
+        MainMixer.GetFloat("MasterVolume", out(volume));
+        Debug.Log("volume:" + volume);
+    }
     // ========================================================================================================
     // ********************************************************************************************************
     // ========================================================================================================
