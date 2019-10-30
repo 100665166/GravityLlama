@@ -30,7 +30,7 @@ public class SpaceToPlay : MonoBehaviour
             if (Input.GetKeyDown("space"))
             {
                 Debug.Log("SpaceToPlay");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene("Level2");
             }
         }
     }
