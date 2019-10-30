@@ -163,6 +163,7 @@ public class Player : MonoBehaviour
     {
         if (IsGrounded)
         {
+            rb.AddForce(Vector3.up * jumpStrength);
             if (IsLowGravity)
             {
                 // Need a very strong jump on low gravity levels
