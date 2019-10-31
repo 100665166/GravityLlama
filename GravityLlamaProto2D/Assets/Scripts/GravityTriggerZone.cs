@@ -99,8 +99,8 @@ public class GravityTriggerZone : MonoBehaviour
             {
                 //Debug.Log("Entering LG zone...");
                 player.SetLowGravityState = true;
-                gm.GetComponent<GravityLevel>().SetGravityLevel = 1;
-                gm.GetComponent<TranslateMove>().sideSpeed = gm.GetComponent<TranslateMove>().sideSpeed * 2;
+                gm.GetComponent<GravityLevel>().SetGravityLevel = 3;
+                gm.GetComponent<TranslateMove>().sideSpeed = gm.GetComponent<TranslateMove>().sideSpeed * 10;
             }
         }
     }
