@@ -106,11 +106,13 @@ public class ScoringSystem : MonoBehaviour
     // ********************************************************************************************************
 
     // SaveScore
-    // Pass the current level's score count to HighScoresScreen
+    // Pass the current level's score count to HighScoreSystem
     // Takes: Nothing
     // Returns: Nothing
     public void SaveScore()
     {
+        GetComponent<HighScoreSystem>().RecordScore(currentScore);
+
         //HighScoresScreen scoreTable = GameObject.FindGameObjectWithTag("HighScoreTable").GetComponent<HighScoresScreen>();
         //scoreTable.AddHighScore(currentScore);
     }

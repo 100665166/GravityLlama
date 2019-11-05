@@ -16,6 +16,7 @@ TagManager:
   - HighScoreContainer
   - HighScoreTemplate
   - HighScoreTable
+  - Scores
   layers:
   - Default
   - TransparentFX

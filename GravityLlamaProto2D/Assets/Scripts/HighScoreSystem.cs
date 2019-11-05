@@ -30,6 +30,12 @@
  * ScoringSystem.cs
  * 
  * 
+ * Notes:
+ * - The current system only supports one level and five scores
+ * - Possible expansion methods would be to add two strings as an identifier
+ * - Then sorting them based on level/rank string + score value
+ * 
+ * 
  * Changelog:
  * 05-11    Initial
  * 
@@ -39,38 +45,191 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HighScoreSystem : MonoBehaviour
 {
+    // This stores the actual list of high scores (retrieved from PlayerPrefs)
+    [Tooltip("The highest five recorded scores.\n\nThis is dependent on the player's PlayerPref settings so it will appear as a list of zeroes until a game is finished and a score is recorded.")]
+    public List<int> highScores;
 
+    [Tooltip("Drag the highscores UI object here.")]
+    public GameObject leaderboard;
 
-    // ========================================================================================================
-    // ********************************************************************************************************
-    // ========================================================================================================
-    // ********************************************************************************************************
-    // ========================================================================================================
-    // ********************************************************************************************************
-    // ========================================================================================================
-    // ********************************************************************************************************
-    // ========================================================================================================
-    // ********************************************************************************************************
-    // ========================================================================================================
+    //[SerializeField]
+    // Text objects used for the high scores
+    private GameObject[] scoresText;
 
-    // RecordScore
-    // Does the actual saving of the current score passed from ScoringSystem
-    // Takes: float
-    // Returns: Nothing
-    public void RecordScore(float score)
+    // ********************************************************************************************************
+
+    void Start()
     {
+        // For testing only
+        /*PlayerPrefs.SetFloat("HS1", 5000f);
+        PlayerPrefs.SetFloat("HS2", 1000f);
+        PlayerPrefs.SetFloat("HS3", 3000f);
+        PlayerPrefs.SetFloat("HS4", 2000f);
+        PlayerPrefs.SetFloat("HS5", 4000f);*/
 
+        // Always retrieve the stored high scores first
+        LoadScore();
+
+        // Also get the children in the highscores UI object
+        scoresText = GameObject.FindGameObjectsWithTag("Scores");
+
+        // Set values on leaderboard initially
+        UpdateScoreboard();
+
+        // Then hide the screen (we don't show up again until the level is done)
+        leaderboard.SetActive(false);
+
+        // Also for testing
+        /*foreach (int i in highScores)
+        {
+            Debug.Log(i);
+        }
+        Debug.Log("================= LOADED");
+        RecordScore(3500);
+        foreach (int i in highScores)
+        {
+            Debug.Log(i);
+        }
+        Debug.Log("================= SAVING");
+        Debug.Log(PlayerPrefs.GetFloat("HS1"));
+        Debug.Log(PlayerPrefs.GetFloat("HS2"));
+        Debug.Log(PlayerPrefs.GetFloat("HS3"));
+        Debug.Log(PlayerPrefs.GetFloat("HS4"));
+        Debug.Log(PlayerPrefs.GetFloat("HS5"));
+        Debug.Log("================= AFTER SAVING");*/
     }
 
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+    // ********************************************************************************************************
+    // ========================================================================================================
+
     // LoadScore
-    // Grabs the last five high scores from the player's profile
+    // Grabs the highest five scores from the player's prefs
     // Takes: Nothing
     // Returns: Nothing
     public void LoadScore()
     {
+        // Empty the list if there are scores already within it
+        if (highScores != null)
+        {
+            highScores.Clear();
+        }
 
+        // Hardcoded
+        highScores.Add((int)PlayerPrefs.GetFloat("HS1"));
+        highScores.Add((int)PlayerPrefs.GetFloat("HS2"));
+        highScores.Add((int)PlayerPrefs.GetFloat("HS3"));
+        highScores.Add((int)PlayerPrefs.GetFloat("HS4"));
+        highScores.Add((int)PlayerPrefs.GetFloat("HS5"));
+
+        // Now rearrange them in order from highest to lowest and update the list
+        highScores.Sort();
+        highScores.Reverse();
     }
+
+    // ********************************************************************************************************
+
+    // CheckScore
+    // Determines if the latest score should be recorded
+    // Takes: int
+    // Returns: bool
+    public bool CheckScore(int score)
+    {
+        bool canSaveScore = false;  // For level restarts
+
+        // Iterate through all five until we find the first lower than our current score
+        for (int i = 0; i < highScores.Count; i++)
+        {
+            // Find the score that is lower than the current one
+            if (highScores[i] < score)
+            {
+                // Toggle flag since we can save
+                canSaveScore = true;
+                // Now exit the loop; we don't care about the other scores
+                break;
+            }
+        }
+
+        if (canSaveScore)
+        {
+            // Replace the lowest score with the latest (no need to sort; that's done in RecordScore)
+            highScores[4] = score;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    // ********************************************************************************************************
+
+    // RecordScore
+    // Does the actual saving of the current score passed from ScoringSystem
+    // Takes: int
+    // Returns: Nothing
+    public void RecordScore(int score)
+    {
+        // Validate the high score to see if we need to store it
+        if (CheckScore(score))
+        {
+            // Sort the scores one last time before saving
+            highScores.Sort();
+            highScores.Reverse();
+            UpdateScoreboard();
+
+            // Now store them into the player's profile
+            // Shouldn't be hardcoded but since we only have five anyway...
+            PlayerPrefs.SetFloat("HS1", highScores[0]);
+            PlayerPrefs.SetFloat("HS2", highScores[1]);
+            PlayerPrefs.SetFloat("HS3", highScores[2]);
+            PlayerPrefs.SetFloat("HS4", highScores[3]);
+            PlayerPrefs.SetFloat("HS5", highScores[4]);
+        }
+        else
+        {
+            // No score is saved if the latest session didn't earn above the previous ones
+            //Debug.Log("No high score was recorded from this session.");
+            UpdateScoreboard();
+        }
+    }
+
+    // ********************************************************************************************************
+
+    // UpdateScoreboard
+    // Updates values on the leaderboard
+    // Takes: Nothing
+    // Returns: Nothing
+    public void UpdateScoreboard()
+    {
+        for (int i = 0; i < scoresText.Length; i++)
+        {
+            scoresText[i].GetComponent<Text>().text = highScores[i].ToString();
+        }
+    }
+
+    // ********************************************************************************************************
+
+    // DisplayScoreboard
+    // Shows the leaderboard and lerps in the items
+    // Takes: Nothing
+    // Returns: Nothing
+    public void DisplayScoreboard()
+    {
+        leaderboard.SetActive(true);
+    }
+
+    // ********************************************************************************************************
 }
