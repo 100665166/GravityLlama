@@ -48,9 +48,6 @@ using UnityEngine.SceneManagement;
 
 public class GoalEndLevel : MonoBehaviour
 {
-    //[Tooltip("String - Type in the name of the scene that needs to be loaded once this trigger is hit.\n\nMUST BE THE EXACT NAME OF THE SCENE!")]
-    //public string changeToLevel = "";
-
     private GameObject gm;
 
     // ********************************************************************************************************
