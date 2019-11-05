@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-
     public static bool gameIsPaused = false;
     public GameObject PauseMenuCanvas;
     public AudioSource BGM;
+
+    // For blur FX
+    private VHS mainCamera;
+
+    void Start()
+    {
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<VHS>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +34,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         gameIsPaused = false;
+        mainCamera.enabled = false;  // Disable VHS blur effect
         PauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         BGM.Play();
@@ -35,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         gameIsPaused = true;
+        mainCamera.enabled = true; // Enable VHS blur effect
         PauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
         BGM.Pause();

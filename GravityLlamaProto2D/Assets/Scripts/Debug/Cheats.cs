@@ -36,6 +36,7 @@
  * 12-09    Can now change gravity on the fly without having to press UI buttons
  * 22-09    MoonJumping added
  * 24-09    Supersonic mode added
+ * 06-11    Toggling VHS blur effect for camera
  * 
  * =============================================================================
  */
@@ -54,12 +55,14 @@ public class Cheats : MonoBehaviour
 
     private Player player;   // Need to get player's position so that things can spawn properly
     private GameObject gm;   // Don't forget the GameManager
+    private VHS mainCamera;  // ...or the camera
 
     // ********************************************************************************************************
 
     void Start()
     {
         player = GetComponent<Player>();
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<VHS>();
 
         try
         {
@@ -115,6 +118,18 @@ public class Cheats : MonoBehaviour
                 if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
                 {
                     SpawnNegative();
+                }
+
+                // Enable VHS effect on camera
+                if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.F))
+                {
+                    ToggleVHSOn();
+                }
+
+                // Disable VHS effect on camera
+                if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.G))
+                {
+                    ToggleVHSOff();
                 }
             }
         }
@@ -202,6 +217,30 @@ public class Cheats : MonoBehaviour
         Debug.Log("Spawned a Gravity-- pickup.");
         GameObject pickup = Instantiate(Resources.Load("Pickups/LowersGravity"), player.transform.position + (transform.right * 8) + (player.transform.up * 2), player.transform.rotation) as GameObject;
         pickup.GetComponent<Rigidbody>().AddForce(Vector3.back * 750f);
+    }
+
+    // ********************************************************************************************************
+
+    // ToggleVHSOn
+    // Enable VHS FX on camera
+    // Takes: Nothing
+    // Returns: Nothing
+    public void ToggleVHSOn()
+    {
+        Debug.Log("VHS blur enabled.");
+        mainCamera.enabled = true;
+    }
+
+    // ********************************************************************************************************
+
+    // ToggleVHSOff
+    // Disable VHS FX on camera
+    // Takes: Nothing
+    // Returns: Nothing
+    public void ToggleVHSOff()
+    {
+        Debug.Log("VHS blur disabled.");
+        mainCamera.enabled = false;
     }
 
     // ********************************************************************************************************

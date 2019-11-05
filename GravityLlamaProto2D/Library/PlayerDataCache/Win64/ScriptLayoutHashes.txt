@@ -187,3 +187,4 @@ cd632970813cdbd150b01ebbe5b5b422 Assembly-CSharp.dll:.Cheats
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 ccb32b689c732abb35fc13bbb8ff8e85 Assembly-CSharp.dll:.AudioManager
 9b3f0b19d2f67ed062d1096354a55247 Assembly-CSharp.dll:.ScoringSystem
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.VHS
