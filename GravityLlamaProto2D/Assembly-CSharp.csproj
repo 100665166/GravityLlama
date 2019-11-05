@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AdjustGravity.cs" />
     <Compile Include="Assets\Scripts\Archived\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Archived\GravityTriggerZoneNormal.cs" />
+    <Compile Include="Assets\Scripts\Archived\HighScoresScreen.cs" />
     <Compile Include="Assets\Scripts\Archived\LaneMagnet.cs" />
     <Compile Include="Assets\Scripts\Archived\LanesSystem.cs" />
     <Compile Include="Assets\Scripts\Archived\Movement.cs" />
@@ -75,7 +77,7 @@
     <Compile Include="Assets\Scripts\GoalEndLevel.cs" />
     <Compile Include="Assets\Scripts\GravityLevel.cs" />
     <Compile Include="Assets\Scripts\GravityTriggerZone.cs" />
-    <Compile Include="Assets\Scripts\HighScoresScreen.cs" />
+    <Compile Include="Assets\Scripts\HighScoreSystem.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\Pickups\AddsGravityPickup.cs" />

@@ -106,7 +106,7 @@ public class GoalEndLevel : MonoBehaviour
             gm.GetComponent<ScoringSystem>().SaveScore();
 
             // Then initiate fade out in HighScoresScreen
-            gm.GetComponent<HighScoresScreen>().EndGame();
+            //gm.GetComponent<HighScoresScreen>().EndGame();
         }
     }
 }
