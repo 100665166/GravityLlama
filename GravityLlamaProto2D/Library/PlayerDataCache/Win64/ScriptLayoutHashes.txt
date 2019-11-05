@@ -55,8 +55,6 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 98ad81e9f689a492509f07e75b810aaa Unity.TextMeshPro.dll:TMPro.TMP_InputField
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 5fc094978ce3e3591a7500ed380d854a UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -103,6 +101,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.WinScreenButtons
 00274a21279f5cb831ce20f895049e38 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -122,6 +121,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MainMenu
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SpaceToPlay
 f3d9f9c08048954c2f0f37530db08e82 Assembly-CSharp.dll:.LanesSystem
+76eb5470966b231681e185acd1b27660 Assembly-CSharp.dll:.PauseMenu
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 d74db6e399f8830e4153379965a2f909 Assembly-CSharp.dll:.PickupGenerator
@@ -134,7 +134,7 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 a5056d576af41e150e8840bd6f5ee2e1 Assembly-CSharp.dll:.TerrainMover
 67e0ebfb492bb4466a5b39fb2c5a4ce2 Assembly-CSharp.dll:.GravityTriggerZone
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
-0837617ebd8e55115e4c3591bacef19b Assembly-CSharp.dll:.GoalEndLevel
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.GoalEndLevel
 34547ba5066934ab974945217fdf4c57 Assembly-CSharp.dll:.CameraStabliser
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
@@ -158,7 +158,7 @@ d835e37be8caf473a0d64dc941f2a2a8 Assembly-CSharp.dll:.OptionsMenu
 de9690980ec7e9ff34d697f33ae2c28e Assembly-CSharp.dll:.GravityTriggerZoneNormal
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.HighScoreSystem
+bd8cd465daa9e69d1a49cb20a0de4b11 Assembly-CSharp.dll:.HighScoreSystem
 2e72a545eb9a0580f33f6bf386a37270 Assembly-CSharp.dll:.Player
 cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
@@ -185,5 +185,5 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 cd632970813cdbd150b01ebbe5b5b422 Assembly-CSharp.dll:.Cheats
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-628d016689f1ef9a22a095671049f3ce Assembly-CSharp.dll:.AudioManager
+ccb32b689c732abb35fc13bbb8ff8e85 Assembly-CSharp.dll:.AudioManager
 9b3f0b19d2f67ed062d1096354a55247 Assembly-CSharp.dll:.ScoringSystem

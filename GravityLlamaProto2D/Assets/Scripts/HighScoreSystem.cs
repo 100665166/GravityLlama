@@ -38,10 +38,13 @@
  * 
  * Changelog:
  * 05-11    Initial
+ * 06-11    Made sorting happen earlier in the case of first-time runs
+ * 06-11    Changed scoresText to hardcoded (there's only ever five anyway)
  * 
  * =============================================================================
  */
 
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,26 +59,29 @@ public class HighScoreSystem : MonoBehaviour
     [Tooltip("Drag the highscores UI object here.")]
     public GameObject leaderboard;
 
-    //[SerializeField]
+    [Header("TEXT OBJECTS")]
     // Text objects used for the high scores
-    private GameObject[] scoresText;
+    public GameObject scoresText1;
+    public GameObject scoresText2;
+    public GameObject scoresText3;
+    public GameObject scoresText4;
+    public GameObject scoresText5;
 
     // ********************************************************************************************************
 
     void Start()
     {
         // For testing only
-        /*PlayerPrefs.SetFloat("HS1", 5000f);
-        PlayerPrefs.SetFloat("HS2", 1000f);
-        PlayerPrefs.SetFloat("HS3", 3000f);
-        PlayerPrefs.SetFloat("HS4", 2000f);
-        PlayerPrefs.SetFloat("HS5", 4000f);*/
+        /*PlayerPrefs.SetFloat("HS1", 5f);
+        PlayerPrefs.SetFloat("HS2", 1f);
+        PlayerPrefs.SetFloat("HS3", 3f);
+        PlayerPrefs.SetFloat("HS4", 2f);
+        PlayerPrefs.SetFloat("HS5", 4f);*/
 
         // Always retrieve the stored high scores first
         LoadScore();
 
-        // Also get the children in the highscores UI object
-        scoresText = GameObject.FindGameObjectsWithTag("Scores");
+        //scoresText = GameObject.FindGameObjectsWithTag("Scores");
 
         // Set values on leaderboard initially
         UpdateScoreboard();
@@ -136,7 +142,7 @@ public class HighScoreSystem : MonoBehaviour
 
         // Now rearrange them in order from highest to lowest and update the list
         highScores.Sort();
-        highScores.Reverse();
+        //highScores.Reverse();
     }
 
     // ********************************************************************************************************
@@ -155,21 +161,26 @@ public class HighScoreSystem : MonoBehaviour
             // Find the score that is lower than the current one
             if (highScores[i] < score)
             {
-                // Toggle flag since we can save
+                // Toggle flag since we should save
                 canSaveScore = true;
+                // Replace the lowest score with the latest
+                highScores[4] = score;
                 // Now exit the loop; we don't care about the other scores
                 break;
+            }
+            else
+            {
+                canSaveScore = false;
             }
         }
 
         if (canSaveScore)
         {
-            // Replace the lowest score with the latest (no need to sort; that's done in RecordScore)
-            highScores[4] = score;
             return true;
         }
         else
         {
+            //highScores.Sort();
             return false;
         }
     }
@@ -182,13 +193,18 @@ public class HighScoreSystem : MonoBehaviour
     // Returns: Nothing
     public void RecordScore(int score)
     {
+        // For first time runs
+        //highScores.Sort();
+        //highScores.Reverse();
+        //UpdateScoreboard();
+
         // Validate the high score to see if we need to store it
         if (CheckScore(score))
         {
             // Sort the scores one last time before saving
-            highScores.Sort();
-            highScores.Reverse();
-            UpdateScoreboard();
+            //highScores.Sort();
+            //highScores.Reverse();
+            //UpdateScoreboard();
 
             // Now store them into the player's profile
             // Shouldn't be hardcoded but since we only have five anyway...
@@ -197,12 +213,34 @@ public class HighScoreSystem : MonoBehaviour
             PlayerPrefs.SetFloat("HS3", highScores[2]);
             PlayerPrefs.SetFloat("HS4", highScores[3]);
             PlayerPrefs.SetFloat("HS5", highScores[4]);
+
+            // Update the board again
+            highScores[0] = (int)PlayerPrefs.GetFloat("HS1");
+            highScores[1] = (int)PlayerPrefs.GetFloat("HS2");
+            highScores[2] = (int)PlayerPrefs.GetFloat("HS3");
+            highScores[3] = (int)PlayerPrefs.GetFloat("HS4");
+            highScores[4] = (int)PlayerPrefs.GetFloat("HS5");
+
+            /*for (int i = 0; i < scoresText.Length; i++)
+            {
+                scoresText[i].GetComponent<Text>().text = highScores[i].ToString();
+            }*/
+
+            UpdateScoreboard();
         }
         else
         {
             // No score is saved if the latest session didn't earn above the previous ones
-            //Debug.Log("No high score was recorded from this session.");
+            //highScores.Sort();
+            //highScores.Reverse();
+
+            /*for (int i = 0; i < scoresText.Length; i++)
+            {
+                scoresText[i].GetComponent<Text>().text = highScores[i].ToString();
+            }*/
+
             UpdateScoreboard();
+            //Debug.Log("No high score was recorded from this session.");
         }
     }
 
@@ -214,10 +252,19 @@ public class HighScoreSystem : MonoBehaviour
     // Returns: Nothing
     public void UpdateScoreboard()
     {
-        for (int i = 0; i < scoresText.Length; i++)
+        highScores.Sort();
+        highScores.Reverse();
+
+        scoresText1.GetComponent<Text>().text = highScores[0].ToString();
+        scoresText2.GetComponent<Text>().text = highScores[1].ToString();
+        scoresText3.GetComponent<Text>().text = highScores[2].ToString();
+        scoresText4.GetComponent<Text>().text = highScores[3].ToString();
+        scoresText5.GetComponent<Text>().text = highScores[4].ToString();
+
+        /*for (int i = 0; i < scoresText.Length; i++)
         {
             scoresText[i].GetComponent<Text>().text = highScores[i].ToString();
-        }
+        }*/
     }
 
     // ********************************************************************************************************
