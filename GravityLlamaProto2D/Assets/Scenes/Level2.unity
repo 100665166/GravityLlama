@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3359,7 +3359,7 @@ PrefabInstance:
     - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -14.15
       objectReference: {fileID: 0}
     - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
         type: 3}
@@ -3424,7 +3424,7 @@ PrefabInstance:
     - target: {fileID: 4912365986868200647, guid: 4f97437ddb860794d825994907ff39c8,
         type: 3}
       propertyPath: EmissionModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912365986868200647, guid: 4f97437ddb860794d825994907ff39c8,
         type: 3}
@@ -7474,7 +7474,7 @@ PrefabInstance:
     - target: {fileID: 445051637377098949, guid: ff1a3165a9367ed49be1050a286578db,
         type: 3}
       propertyPath: EmissionModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 445051637377098949, guid: ff1a3165a9367ed49be1050a286578db,
         type: 3}
@@ -7484,7 +7484,7 @@ PrefabInstance:
     - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.100002
+      value: -14.87
       objectReference: {fileID: 0}
     - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
         type: 3}
@@ -9574,7 +9574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ground: {fileID: 1860747761}
   Sky: {fileID: 188335121}
-  offSet: 7
+  offSet: 12
 --- !u!1 &1654297760
 GameObject:
   m_ObjectHideFlags: 0
