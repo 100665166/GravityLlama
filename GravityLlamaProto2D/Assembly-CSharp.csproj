@@ -55,6 +55,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AdjustGravity.cs" />
      <Compile Include="Assets\Scripts\Archived\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\Archived\GravityTriggerZoneNormal.cs" />
+     <Compile Include="Assets\Scripts\Archived\HighScoresScreen.cs" />
      <Compile Include="Assets\Scripts\Archived\LaneMagnet.cs" />
      <Compile Include="Assets\Scripts\Archived\LanesSystem.cs" />
      <Compile Include="Assets\Scripts\Archived\Movement.cs" />
@@ -65,13 +67,16 @@
      <Compile Include="Assets\Scripts\BaseClasses\PickupBase.cs" />
      <Compile Include="Assets\Scripts\CameraStabliser.cs" />
      <Compile Include="Assets\Scripts\Debug\Cheats.cs" />
+     <Compile Include="Assets\Scripts\Effects\VHS.cs" />
      <Compile Include="Assets\Scripts\GoalEndLevel.cs" />
      <Compile Include="Assets\Scripts\GravityLevel.cs" />
      <Compile Include="Assets\Scripts\GravityTriggerZone.cs" />
-     <Compile Include="Assets\Scripts\GravityTriggerZoneNormal.cs" />
-     <Compile Include="Assets\Scripts\HighScoresScreen.cs" />
+     <Compile Include="Assets\Scripts\GravityTriggerZoneNom.cs" />
+     <Compile Include="Assets\Scripts\HighScoreSystem.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\OptionsMenu.cs" />
+     <Compile Include="Assets\Scripts\ParticleLauncher.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Pickups\AddsGravityPickup.cs" />
      <Compile Include="Assets\Scripts\Pickups\LowersGravityPickup.cs" />
      <Compile Include="Assets\Scripts\Pickups\PickupGenerator.cs" />
@@ -81,6 +86,7 @@
      <Compile Include="Assets\Scripts\SpaceToPlay.cs" />
      <Compile Include="Assets\Scripts\TerrainMover.cs" />
      <Compile Include="Assets\Scripts\TranslateMove.cs" />
+     <Compile Include="Assets\Scripts\WinScreenButtons.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
@@ -93,6 +99,7 @@
      <None Include="Assets\Resources\scores.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\Resources\VHSeffect.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -102,19 +109,19 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/George Goutoglou/Documents/GitHub/test/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/wtf - Copy/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/George Goutoglou/Documents/GitHub/test/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>D:/wtf - Copy/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/George Goutoglou/Documents/GitHub/test/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/wtf - Copy/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/George Goutoglou/Documents/GitHub/test/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/wtf - Copy/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>C:/Users/George Goutoglou/Documents/GitHub/test/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>D:/wtf - Copy/GravityLlamaProto2D/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -318,13 +325,13 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.7f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>C:/Users/George Goutoglou/Documents/GitHub/test/GravityLlamaProto2D/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>D:/wtf - Copy/GravityLlamaProto2D/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>C:/Users/George Goutoglou/Documents/GitHub/test/GravityLlamaProto2D/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>D:/wtf - Copy/GravityLlamaProto2D/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>C:/Users/George Goutoglou/Documents/GitHub/test/GravityLlamaProto2D/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>D:/wtf - Copy/GravityLlamaProto2D/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.7f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
