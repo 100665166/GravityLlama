@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         gameIsPaused = false;
-        mainCamera.enabled = false;  // Disable VHS blur effect
+        //mainCamera.enabled = false;  // Disable VHS blur effect
         PauseMenuCanvas.SetActive(false);
         Time.timeScale = 1f;
         BGM.Play();
@@ -43,7 +43,7 @@ public class PauseMenu : MonoBehaviour
     void Pause()
     {
         gameIsPaused = true;
-        mainCamera.enabled = true; // Enable VHS blur effect
+        //mainCamera.enabled = true; // Enable VHS blur effect
         PauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
         BGM.Pause();

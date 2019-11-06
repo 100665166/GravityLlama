@@ -51,12 +51,12 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         MainMixer.GetFloat("MasterVolume", out(MainVol));
-        volume = (.8f - Mathf.Abs(MainVol / 100))*.05f;
+        volume = (.8f - Mathf.Abs(MainVol / 100))*.1f;
     }
     private void Update()
     {
         MainMixer.GetFloat("MasterVolume", out (MainVol));
-        volume = (.8f - Mathf.Abs(MainVol / 100)) * .05f;
+        volume = (.8f - Mathf.Abs(MainVol / 100)) * .1f;
         Debug.Log("volume:" + volume);
     }
     // ========================================================================================================
