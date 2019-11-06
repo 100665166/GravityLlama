@@ -15,8 +15,6 @@
  * 
  * Description:
  * For tracking the player's score
- * High scores are NOT handled here!
- * They're taken care of in HighScoreSystem.cs
  * 
  * 
  * Parameters:
@@ -28,7 +26,7 @@
  * 
  * 
  * Dependencies:
- * HighScoreSystem.cs
+ * HighScoresScreen.cs
  * 
  * 
  * Changelog:
@@ -36,7 +34,6 @@
  * 21-10    Scores can now be read/written from an external text file
  * 22-10    Integrated scores.txt into Resources; no longer uses StreamReader
  * 29-10    Score saving no longer handled by this script; transferred to HighScoresScreen
- * 05-11    HighScoresScreen deprecated; relies on HighScoreSystem instead
  * 
  * =============================================================================
  */
@@ -106,14 +103,12 @@ public class ScoringSystem : MonoBehaviour
     // ********************************************************************************************************
 
     // SaveScore
-    // Pass the current level's score count to HighScoreSystem
+    // Pass the current level's score count to HighScoresScreen
     // Takes: Nothing
     // Returns: Nothing
     public void SaveScore()
     {
-        GetComponent<HighScoreSystem>().RecordScore(currentScore);
-
-        //HighScoresScreen scoreTable = GameObject.FindGameObjectWithTag("HighScoreTable").GetComponent<HighScoresScreen>();
-        //scoreTable.AddHighScore(currentScore);
+        HighScoresScreen scoreTable = GameObject.FindGameObjectWithTag("HighScoreTable").GetComponent<HighScoresScreen>();
+        scoreTable.AddHighScore(currentScore);
     }
 }

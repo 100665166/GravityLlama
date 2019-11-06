@@ -33,7 +33,6 @@
  * 
  * Changelog:
  * 29-10    Initial
- * 05-11    Changed where TranslateMove is grabbed (Player not GameManager)
  * 
  * =============================================================================
  */
@@ -53,10 +52,6 @@ public class GravityTriggerZone : MonoBehaviour
     [Tooltip("Is this zone going to affect the player's inertia?\n\nNote that the entire collider is used to detect whether the player is inside the low gravity area, so make sure your collider box extends the entire length (don't forget to make it isTrigger too!)")]
     public bool lowGravityZone = false;
 
-    [Tooltip("Determines how quickly the player can zip from left-to-right (and vice versa).")]
-    public float sideSpeedMultiplier = 1f;
-
-    private GameObject playerObject;
     private Player player;
     private GameObject gm;
 
@@ -64,8 +59,7 @@ public class GravityTriggerZone : MonoBehaviour
 
     void Start()
     {
-        playerObject = GameObject.FindGameObjectWithTag("Player");
-        player = playerObject.GetComponent<Player>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gm = GameObject.FindGameObjectWithTag("GameManager");
     }
 
@@ -106,7 +100,7 @@ public class GravityTriggerZone : MonoBehaviour
                 //Debug.Log("Entering LG zone...");
                 player.SetLowGravityState = true;
                 gm.GetComponent<GravityLevel>().SetGravityLevel = 3;
-                playerObject.GetComponent<TranslateMove>().sideSpeed = playerObject.GetComponent<TranslateMove>().sideSpeed * sideSpeedMultiplier;
+                gm.GetComponent<TranslateMove>().sideSpeed = gm.GetComponent<TranslateMove>().sideSpeed * 10;
             }
         }
     }
@@ -123,7 +117,7 @@ public class GravityTriggerZone : MonoBehaviour
                 lowGravityZone = false;
                 // TODO: This shouldn't be hardcoded...
                 gm.GetComponent<GravityLevel>().SetGravityLevel = 5;
-                playerObject.GetComponent<TranslateMove>().sideSpeed = 8f;
+                gm.GetComponent<TranslateMove>().sideSpeed = 8f;
             }
         }
     }

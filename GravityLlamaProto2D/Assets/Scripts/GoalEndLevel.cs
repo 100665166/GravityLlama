@@ -28,14 +28,13 @@
  * Dependencies:
  * TerrainMover.cs
  * ScoringSystem.cs
- * HighScoreSystem.cs
+ * HighScoresScreen.cs
  * 
  * 
  * Changelog:
  * 07-10    Initial
  * 08-10    Temporarily restarts level once goal reached
  * 22-10    Supports string-based scene changes; saving high scores
- * 05-11    Changed to support HighScoreSystem instead
  * 
  * =============================================================================
  */
@@ -48,6 +47,9 @@ using UnityEngine.SceneManagement;
 
 public class GoalEndLevel : MonoBehaviour
 {
+    [Tooltip("String - Type in the name of the scene that needs to be loaded once this trigger is hit.\n\nMUST BE THE EXACT NAME OF THE SCENE!")]
+    public string changeToLevel = "";
+
     private GameObject gm;
 
     // ********************************************************************************************************
@@ -102,9 +104,9 @@ public class GoalEndLevel : MonoBehaviour
 
             // Tell ScoringSystem to save the final score
             gm.GetComponent<ScoringSystem>().SaveScore();
-            gm.GetComponent<HighScoreSystem>().DisplayScoreboard();
 
-            //gm.GetComponent<HighScoresScreen>().EndGame();
+            // Then initiate fade out in HighScoresScreen
+            gm.GetComponent<HighScoresScreen>().EndGame();
         }
     }
 }
