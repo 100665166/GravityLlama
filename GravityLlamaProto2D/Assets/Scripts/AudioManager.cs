@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
     {
         MainMixer.GetFloat("MasterVolume", out (MainVol));
         volume = (.8f - Mathf.Abs(MainVol / 100)) * .1f;
-        Debug.Log("volume:" + volume);
+        //Debug.Log("volume:" + volume);
     }
     // ========================================================================================================
     // ********************************************************************************************************

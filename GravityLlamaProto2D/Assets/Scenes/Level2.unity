@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -486,6 +486,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5150245713811932238}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &100191186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100191185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &113366831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -727,6 +742,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215808323854264790, guid: eb61d63bc5d7ec243aff1a8e063ccf2c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151449206892664683, guid: eb61d63bc5d7ec243aff1a8e063ccf2c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7282362193506668156, guid: eb61d63bc5d7ec243aff1a8e063ccf2c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3097082905009341032, guid: eb61d63bc5d7ec243aff1a8e063ccf2c, type: 3}
@@ -1523,6 +1553,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184653631}
   m_Mesh: {fileID: 4300028, guid: 12f617b9928378b4f8b24b6c62ffd4a0, type: 3}
+--- !u!198 &188335121 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 445051637377098949, guid: ff1a3165a9367ed49be1050a286578db,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267144351}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &197994548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3308,6 +3344,95 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493034584}
   m_Mesh: {fileID: 4300028, guid: 12f617b9928378b4f8b24b6c62ffd4a0, type: 3}
+--- !u!1001 &497674449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1639639359}
+    m_Modifications:
+    - target: {fileID: 4862214125229549090, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_Name
+      value: GroundPickUp_ParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882101253784913954, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912365986868200647, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912365986868200647, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912365986868200647, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912365986868200647, guid: 4f97437ddb860794d825994907ff39c8,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4f97437ddb860794d825994907ff39c8, type: 3}
 --- !u!1 &500166971
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,6 +4558,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5150245713811932238}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &663189888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663189887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &675775456 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 93, guid: edd12502253ed2f46b11fa6ee89a80cd,
@@ -7267,12 +7407,116 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &1267144351
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1639639359}
+    m_Modifications:
+    - target: {fileID: 4996699790878724673, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_Name
+      value: SkyPickUp_ParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.100002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5165236682835817591, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445051637377098949, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 445051637377098949, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 445051637377098949, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 445051637377098949, guid: ff1a3165a9367ed49be1050a286578db,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ff1a3165a9367ed49be1050a286578db, type: 3}
 --- !u!1 &1267160204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 89, guid: edd12502253ed2f46b11fa6ee89a80cd,
     type: 3}
   m_PrefabInstance: {fileID: 5150245713811932238}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1267160205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267160204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1268180141
 GameObject:
   m_ObjectHideFlags: 0
@@ -8219,6 +8463,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5150245713811932238}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441652218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441652217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1483981743
 GameObject:
   m_ObjectHideFlags: 0
@@ -9259,6 +9518,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 113366831}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1639639360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639639352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4430947d7172fb4896c75ab00b57efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ground: {fileID: 1860747761}
+  Sky: {fileID: 188335121}
+  offSet: 7
 --- !u!1 &1654297760
 GameObject:
   m_ObjectHideFlags: 0
@@ -9781,6 +10055,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 30, y: 100, z: 60}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!198 &1860747761 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4912365986868200647, guid: 4f97437ddb860794d825994907ff39c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 497674449}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1863043170
 GameObject:
   m_ObjectHideFlags: 0
@@ -11295,6 +11575,4238 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 468.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 600349042089731815, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658550575605172396, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743188722672379078, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334155918801045903, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8998382980429155414, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2559802576946191196, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601921137141651109, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4489237484312103556, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420893114129675853, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467631328200153695, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3971637927214673263, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661042278784865884, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191054782596005628, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174572506503955320, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711101469093043832, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308773016874273141, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 648508505578468707, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3963389012301865894, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584156923054690165, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920178406676978862, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090253562206444079, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3640111037683338312, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451093028505051181, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131834046584780033, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7820084045083379820, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367479634515266845, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8093246692893886986, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527688645820731907, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630253192207740635, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140535123212283871, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884330274713354057, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609174103852573402, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7317680237499712284, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281126241863547680, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983904485812146349, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371923018649202642, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1750088701490698099, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074493203753097622, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587454638483789628, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 681850862625216502, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5907130692743717739, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107071817774218598, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128226682113263626, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3594029889915487015, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6450952848739389460, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957768853547443831, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755897093300457313, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749883571827135382, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083266544292214264, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1742050554936290752, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755429185363371382, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240422683989605060, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7153412074204573084, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618244211193965086, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 648249800529980149, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312656577439709744, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651601539895507609, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382491178354694929, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859464491108312813, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990805331522349154, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619563324012856941, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163434839941074873, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540646589798597050, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5778136581111206, guid: af153bef1dcce4740b01c845588f64d7, type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614654922975889409, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727311895455831339, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598802840428570351, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591619879332939010, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333271740869772261, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685851101168764397, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5401284328180457429, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 927672175619072341, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630587206555889160, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854469391404600636, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2551333663144141062, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233375231882238694, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933858704718815962, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700072240795410887, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488901821647200977, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934033934421266402, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4857044137236224954, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7913912614307708134, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1080414202071639031, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408406201738724454, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925763862635894964, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420274664167376286, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479772414074018959, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409387925828051921, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1272480350621120066, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9084242949281211861, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044734567851693567, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843907038486658813, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270474936694858585, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3092906383354674437, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302670181785611142, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706200401705389556, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124598564163872620, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2511488655133324117, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776272353909537580, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780741931487118874, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313739431383942798, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8540125939130924253, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3364959692071833701, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060724856680964656, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658774815619009951, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890107537218340505, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 381818213031738459, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477726430539839630, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913634444002671813, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1009421528520353905, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931745165822753000, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251946328329600901, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464475675546011413, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220867298111251439, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 935134267792434382, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7082957869043669734, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 648399156137312585, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992501547289197603, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5343949928814144759, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224008440423103907, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720235605071114991, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144046044787608220, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513963163922810286, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 814785843249449965, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770933270392431298, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437799016331632137, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587010681874217091, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950129193437274067, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367443756198157881, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7984990449750094048, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7626917339357891818, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4184559173180661982, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6805890096688718793, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 644655813218390323, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105603404512862814, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164183600555207055, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158253307021098844, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854317335742170227, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819325606816275909, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511491340165039650, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909266335272166456, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627363696100675547, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589505246645669249, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552227834765244128, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558753338056518159, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195806966429418439, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737131309051432772, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936196785015916047, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8097623156441174011, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205304075321341614, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104410190339446341, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 529550135322336126, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2147442688343990795, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094386742625965433, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 643479321903511039, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3011320688574865819, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183996057357434991, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894996494408238298, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953080921406440722, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6154967572836643870, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 982703008612098511, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526024400547270743, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395663021007522091, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194162030093089288, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 916962992728808674, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445839951449905313, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064148106436856736, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8886570620452632344, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465634078533192487, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073306180379092658, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797017340769364537, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226706503173434269, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356294646605718965, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167736277975751144, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7458465592141315473, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009611794370643006, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7430029465740242821, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465077649974726405, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716918092681279537, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2414221631866601332, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006798769644818249, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678220033440895695, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966045291516388541, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334758925622083460, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832298814903430002, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052138949527145928, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 666918997019463580, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926455521208100248, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380234901154886113, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 890107406411762994, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756956196933393898, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2115433565610918330, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387288095038759872, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157950162081833735, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033615990791622432, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503106450205856531, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930749154796390593, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8143914878561095491, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845212061625048773, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3188483243962805118, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3260246519787196201, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 984839644358078998, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 795415266454232993, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740070408935287142, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 577972709462091303, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075393406053214646, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3884697514688808980, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876955645038033960, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051796780780124900, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109448201945182757, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739946212640701456, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747053052924215520, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629427629607664984, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523187500149304338, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726718162867924623, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362507509699528209, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3262790672830202077, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645180097540260591, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469203802919229565, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528170155722895173, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116240333484918997, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 792295033426278229, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2860606661541422708, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502729126542475170, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978284074641327817, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577472214900687628, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1623787626668682371, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256170282097141960, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026281538264593865, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 881358195922161656, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091668567369266158, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 623231351116244248, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794119868795271503, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025562240837197680, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7348833393796653417, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308749008968995035, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740754734736873636, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3837363201503449740, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602436205838199401, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4244929582916164015, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045593614745352051, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766903719419590667, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624667704509054026, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862000477508504093, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783520760741786207, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912946689865429322, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694952537772858280, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5887649465321058036, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285519587301330613, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999415541467054824, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413491746394804835, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2919309901485467848, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186647794222335777, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466398742639025374, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174868602360866404, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6699842808933148766, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 150308993756496100, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7480973278632759193, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717232247235596926, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883366127013284431, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971155648413404499, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337289804902048867, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498769966737184951, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 956649488917342273, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493224714900456280, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747589519208271079, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457349688470711396, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274348698023431229, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 922360012176612806, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415450231264106486, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442874093224606242, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 455721942763227941, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603435475199443734, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 127364972246908767, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219850797415657938, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081018505066963377, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1255697501774751590, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477820086929757188, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518628779974213289, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 207628843962684651, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065432089647559727, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259371432781268574, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6083589015923739029, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 825563497052709938, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 579650266820933302, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728350904202756544, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479724107446069125, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364933322004672337, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577048663510560485, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636373937677609095, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7853150915846231988, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883348029024919185, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5455211516344618433, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145448837818865773, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5827795991869113706, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887676612948157532, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610491240053345629, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 622723353771874659, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282720270652394660, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259031775726870775, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713109517739389952, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8117922034150416667, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051850187033067568, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913541511460051138, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730724608537207691, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207067429350950901, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 574626599172919072, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206837355324748768, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694250183404890048, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604145118860571443, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581668790230484213, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073125914181849045, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 319901926510190477, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500841851779528589, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3755716324813367176, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 50754407698964455, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112457826620170722, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7003497214847617239, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3763172496559801232, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100714006657916495, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636592861428681878, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523521926700266835, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4356609569618052458, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091996548933376270, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970433433304940566, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365688925803497594, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171881502510469032, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971401782264996892, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375104017051930355, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962096963090043507, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720822529578446959, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3397687679284135148, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830241574281214480, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575041760442087639, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184153006930247356, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 914350687779113988, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062106391710466395, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773890337673484117, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4419214168179369887, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368736601606358418, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4915470123710977358, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686655640938433257, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190607036663087531, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 543918082424396118, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285167189656844362, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 665905519910975362, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6901588999954784530, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6260566227514671713, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679813810372093522, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926970850823279533, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756706032347849090, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314489511809873937, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020408667655639787, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294131582675063311, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2048787199331407042, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 533542667630764923, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267864886373543907, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862713089848812904, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263400853388343146, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814875707490316398, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121824041129622193, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2768774788388541156, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862023963974771460, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4581405673017875778, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082983198374314954, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2422950608695622864, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885970287020497893, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4660904475794211793, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8291082105012918631, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 965246214994390145, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 413587970499417582, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712078216536594560, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9205939595357722208, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4567403306144180143, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1876999168738209820, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863366304236695860, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289874729213636479, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822616265539696580, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668978452924561227, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2976418185495145559, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443645546425700776, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868241929170491500, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824246957605978466, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 340542650613756681, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672334829136441547, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525332576861316708, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979238157758755049, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488743183650072712, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597385941935378516, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602988089068941417, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 276307591216421496, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040982205200261632, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768792226349432562, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5940692908634818048, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528219750387099150, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836890072267143640, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843785778673380587, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021054156376678082, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724148471342942054, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8493891555437230443, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630545375715708116, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766398784658559453, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8441441700420219795, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200917300372047580, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920863955643562314, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936513901575213457, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3990175341798376385, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 162555944502950042, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845015355805624648, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075814053880616536, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641120232482986457, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2214235104400584544, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073183786371051083, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845875525126764111, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423255562119889470, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6407076629034738909, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132902756201636261, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853756678129913690, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874110224853454545, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599943228909675639, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619462480788086640, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331770534053965980, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1368437873924504393, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113447103093578748, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2546365049015149272, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898650865327660910, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 86125096019022395, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113570217003819759, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675703949885737964, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215701287682695828, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165796864667956588, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229670842780044186, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229987883012571041, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062801214123624020, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338765671932660691, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4876072119350138278, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888208910829747857, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 845048500918437270, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648142460534050422, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244053947060241042, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399776171582598619, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477055846243804891, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028097847931882593, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685178394133559926, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880831419904553655, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317112556740222131, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979719956298820775, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164908902848320166, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430023902608424417, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4384694658361168080, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726849048454784464, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152210304052958020, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7081403712752408476, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8641004435056833651, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896207102808293069, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810100811157082851, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986232730236447274, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6361497958655097811, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917618356786043063, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3012054918555338673, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292756594573873294, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551841806788537551, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818467744280766783, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091917593429779664, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393700082880926477, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 50253662657429881, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6801593380086436129, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458119557044953212, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047389053827940315, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556622252699774208, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854581129932641704, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847105054263253183, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2043869254326937754, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506571782180888538, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013620990090886468, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879249288900023418, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254732719877283796, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3422990811088951829, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861505893380893796, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800446968216805716, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562466730291298821, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9023964202107452310, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308251758914913235, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467954426561634053, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6090711684583470927, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354476375825161141, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795965580184950974, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2293404276642823738, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5923621806205747312, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284841716095233227, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 181048634113347855, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614411713850941746, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021196963210646182, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020201295067189035, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725456804227489461, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239087216725936031, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8862598257886962371, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706468040629469104, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246138619113859273, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200186279342928234, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622282259190622308, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4293622491759382853, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841446742407275894, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3671530877233164844, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 241844273426153261, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 871853492388463635, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132233160353665885, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522459601320358358, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7783765166566478425, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757011746932099348, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 617230081399266005, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 789196713281858778, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736930362478741130, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570113032298691519, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194817032592933663, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072378043589868188, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6269293080593389814, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650630257112321238, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443933988115271915, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988495690497673357, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5805397868868347403, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284422349172566033, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1661907413343906993, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521178382418971441, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517179860053640779, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7301516214122604093, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184290690988882584, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493317573549676618, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267490803208936328, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489472672423839268, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501907125717005338, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030453199448184698, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3197724265912603171, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7117140147372353051, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388970952288421960, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 482167093373677451, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400420458624960428, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164966810152514552, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292669187147385937, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798431546322503788, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279651784148788883, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9173365645209685360, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6466260164771321723, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860659385170043927, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146002081737979023, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143519335732304364, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309754390278955930, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3739189397080784962, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767905148145143354, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731860208831139789, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982507756712793061, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619988955880928430, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 285723174675669429, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4752072386667201606, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 711189814688660032, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218460954385066807, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769399343034970153, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154256427728748280, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793174754228223204, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 390600554466553842, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528142596735346030, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371923963261018103, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5660486712752840008, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566379114482417000, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429775276407521443, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 809989910517727919, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524983222796876793, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559700528241581997, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4177320319735805858, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478615775572781966, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5392239302196931471, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721431602279747383, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098217726572352203, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671214848143152179, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010859373688693183, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246906730229211092, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6935173973970721699, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464584422719553574, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821840494943366256, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076965895205278758, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3950928153107631401, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7252120394191409096, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260886818060011094, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671504530215597873, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2438881826311165760, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968613606452576603, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305404265419880483, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2040737747291448828, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180758999761405963, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687099485850463045, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6298918035751096589, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 569209737429468506, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187938301074395684, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997043847247145237, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5069913528697700, guid: af153bef1dcce4740b01c845588f64d7, type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 114627579978815950, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199057743209563778, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301491044979807189, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117066253793893310, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090614338617525762, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095248773916019123, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7173778277554970625, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147054179289691796, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688310757296861697, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214651366510882929, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013014031694273232, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 479864380054971266, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5216695541769848211, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689379421377108582, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126624601916152109, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867840965963929891, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5111465353344821205, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4108099944308436961, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188634840205707699, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508897368602320353, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355538829053279337, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204310736769786862, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2795885411061376938, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841116075058168436, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1361865786125354691, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960454925774240650, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995851252732092807, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100932044400604712, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574427862935887986, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510785225397243163, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964676075544153666, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2682522894287069937, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278837261323567158, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516763824744831544, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904449030668998388, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468543082342427015, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755471760405486316, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5113338866192148764, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461926630748617446, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094972596415829416, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 615619910903581109, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5952633583225858818, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 511590589208573755, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652249977892600533, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8482311728881869808, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 896174122379192296, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119599394973582877, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3793391633380755795, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 950610811056843168, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625279526919190473, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 724203028436077363, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039870667261199428, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885945420645140293, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050771116124178498, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318851430233696639, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612854496507995419, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943430758133546930, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611533243903103672, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847981369373349996, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134997167464864554, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677037116915423493, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808117698694483822, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2621102587503986385, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387130945258140280, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602509704966053494, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164190508407104335, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9066782212548774353, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389133751322971521, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173633025940171343, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2812298453673276317, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129709645822349314, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636977849911532676, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015507192530090036, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906382278391712171, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4004070118058520289, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606180318037128038, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 401207896835892265, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 387001461560548208, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 129636088240505291, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 75295117436049464, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 737303046803493991, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609330281577180081, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895472157175921550, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794912224829660977, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 140521999064418482, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862199982861449142, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400404902295403862, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643596274045338358, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672315216015421895, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444917228644388385, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9206301300159406304, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019343306152892886, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616789811838098411, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683460205276601461, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4696082303174115486, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9180047313093231236, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227485563235225823, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248274328704906415, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705079488783852235, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138200342522154326, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487778076001275345, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5968674829788251436, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160122670551195936, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280789273174679060, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960274571753135271, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704115918210187149, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452477405661495, guid: af153bef1dcce4740b01c845588f64d7, type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855769832554164154, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777070834608554360, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5595013448500969985, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106504192717013863, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599060023399806810, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7152887905847212945, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996936278023254936, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997238654080470852, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468707738472492773, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1285706920118952883, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679935431070502067, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3387004458389157875, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330601760639168359, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958491908143432225, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891068633973815591, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702477320613941178, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6236064283530358297, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916476094085364508, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585855416125132867, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7080030030555410824, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009359751654727975, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073287757495631079, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6167356051877715039, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464851387222938504, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262980900613388230, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291253474672865391, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4470966476066907704, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660258596705096021, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698456064262560959, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586747618959140513, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476196220947327730, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964017245008024373, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528032071906365257, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 949722042815435047, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1758962639479914979, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6708276120040212383, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692528125851060465, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 631673093179113854, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 94201077832130859, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165305765191233983, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580203675750788428, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3005956881526902780, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1069234105090151942, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902036636857215901, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8350916977953397228, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066599078292086696, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104009368799452683, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 286988372976790277, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455776233780059031, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5696842017479549054, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142409664630212833, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027947255319637482, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 641348069661893089, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705678904086078556, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972069495980200268, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191779100213496251, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778790844639734184, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4220156545413417970, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888812807441893517, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018816248787200104, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142888563230872004, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 23959430536072096, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309620775614291506, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422309844653899248, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681177581566092758, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3341793701530909712, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506275371038528690, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710272662580464813, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 964983724795900749, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390775858308381988, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5523108265562769621, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4926697282796884852, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3503955845323592816, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067208285338437990, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6287675328689187129, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571263783672023203, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377707964868068805, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468559738797115644, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378177510240562605, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345810552475211177, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966880333685731653, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112195362081208942, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658715840027968379, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406420735959297282, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417002575015408284, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987039752296108616, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523129324321807573, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178242606286014689, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4046713180104082936, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5985516332050528282, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3426328827333827892, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 504085337769187530, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158272642715173902, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414367099030810530, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 657473211390659942, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414760651340602473, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9063531316754546563, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 317981931623389818, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 9079402428333507578, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323592673287693398, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204457676321993128, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8159921144173527310, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 623408401142917123, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099167702161458980, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5316783667552532893, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272875207637798215, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2818494445718900161, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936964559918112469, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887396966489734431, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129432251139125551, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 17833819619737661, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6633428021189963878, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549122584264662279, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843411216297546181, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084426295086679218, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829180023376723108, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096580749361092553, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605654453482352228, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945714361641759149, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588242607063627830, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 428102090886450853, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390514879318445125, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946900655814415193, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970627747008147252, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397257438976223853, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5140063507465332193, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 111814003107140801, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7216009421576439157, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2336166425857012122, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 509383397003697711, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040609435790591178, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689914743403038617, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646156936236094287, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 2319976673939519268, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6226129442349744250, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6833653713905442980, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559157261020487696, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076500061038329680, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035768886375985403, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830512756082108378, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929691419172005057, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106222247162719033, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784554619498256445, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 3933872171036290186, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
+      objectReference: {fileID: 0}
+    - target: {fileID: 77707219538904726, guid: af153bef1dcce4740b01c845588f64d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pickups
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af153bef1dcce4740b01c845588f64d7, type: 3}
@@ -13093,6 +17605,31 @@ PrefabInstance:
       value: 'Main
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 13032, guid: edd12502253ed2f46b11fa6ee89a80cd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1e81e281fee84f409813e602012651a,
+        type: 3}
+    - target: {fileID: 13032, guid: edd12502253ed2f46b11fa6ee89a80cd, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13032, guid: edd12502253ed2f46b11fa6ee89a80cd, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 13032, guid: edd12502253ed2f46b11fa6ee89a80cd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 13032, guid: edd12502253ed2f46b11fa6ee89a80cd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9245283
+      objectReference: {fileID: 0}
+    - target: {fileID: 13032, guid: edd12502253ed2f46b11fa6ee89a80cd, type: 3}
+      propertyPath: m_Color.a
+      value: 0.89411765
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edd12502253ed2f46b11fa6ee89a80cd, type: 3}

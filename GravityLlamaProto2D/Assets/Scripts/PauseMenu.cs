@@ -20,10 +20,10 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("update");
+        //Debug.Log("update");
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("esc pressed");
+            //Debug.Log("esc pressed");
             if (gameIsPaused)
                 Resume();
             else
