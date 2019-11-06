@@ -70,9 +70,9 @@ public class VHS : MonoBehaviour
     public void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
         // TV noise
-        material.SetFloat("_OffsetNoiseX", Random.Range(0f, 0.6f));
+        material.SetFloat("_OffsetNoiseX", Random.Range(0f, 1f));
         float offsetNoise = material.GetFloat("_OffsetNoiseY");
-        material.SetFloat("_OffsetNoiseY", offsetNoise + Random.Range(-0.03f, 0.03f));
+        material.SetFloat("_OffsetNoiseY", offsetNoise + Random.Range(-0.03f, 0.01f));
 
         // Vertical shift
         float offsetPosY = material.GetFloat("_OffsetPosY");
@@ -84,30 +84,30 @@ public class VHS : MonoBehaviour
         {
             material.SetFloat("_OffsetPosY", offsetPosY + Random.Range(0f, -offsetPosY));
         }
-        else if (Random.Range(0, 150) == 1)
+        else if (Random.Range(0, 100) == 1)
         {
-            material.SetFloat("_OffsetPosY", Random.Range(-0.5f, 0.5f));
+            material.SetFloat("_OffsetPosY", Random.Range(-0.2f, 0.2f));
         }
 
         // Channel color shift
         float offsetColor = material.GetFloat("_OffsetColor");
-        if (offsetColor > 0.003f)
+        if (offsetColor > 0.001f)
         {
             material.SetFloat("_OffsetColor", offsetColor - 0.001f);
         }
-        else if (Random.Range(0, 400) == 1)
+        else if (Random.Range(0, 1000) == 1)
         {
-            material.SetFloat("_OffsetColor", Random.Range(0.003f, 0.1f));
+            material.SetFloat("_OffsetColor", Random.Range(0.003f, 0.12f));
         }
 
         // Distortion
         if (Random.Range(0, 15) == 1)
         {
-            material.SetFloat("_OffsetDistortion", Random.Range(1f, 480f));
+            material.SetFloat("_OffsetDistortion", Random.Range(500f, 1500f));
         }
         else
         {
-            material.SetFloat("_OffsetDistortion", 480f);
+            material.SetFloat("_OffsetDistortion", 1500f);
         }
 
         Graphics.Blit(source, destination, material);
