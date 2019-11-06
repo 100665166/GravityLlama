@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1038529040872180548}
   - component: {fileID: 1986715650926724884}
   - component: {fileID: 5830924962948679428}
+  - component: {fileID: 1290315573428592449}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -73,7 +74,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: 0
-  highScore: 0
 --- !u!114 &1986715650926724884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,8 +88,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partToCycle: {fileID: 0}
   goal: {fileID: 0}
-  cyclingSpeed: 2
-  gravityAffectsSpeed: 0
   partMoveSpeed: 30
 --- !u!114 &5830924962948679428
 MonoBehaviour:
@@ -103,5 +101,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f7c66ff1289b54c8e975a1351a9a70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainMixer: {fileID: 0}
+  volume: 0
   negativePickupSound: {fileID: 8300000, guid: 440319a295068f342ab92c41f1950d7e, type: 3}
   positivePickupSound: {fileID: 8300000, guid: 0861c247eaf034446b6cd0ba1b998ce5, type: 3}
+--- !u!114 &1290315573428592449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7806532725714331370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c880478a1513c134cb310ed46e43054f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScores: 

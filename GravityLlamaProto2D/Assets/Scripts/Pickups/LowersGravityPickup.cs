@@ -54,8 +54,8 @@ public class LowersGravityPickup : PickupBase
     {
         if (c.gameObject.CompareTag("Player"))
         {
-            Debug.Log("pickup audio" + (1 - (Math.Abs(gm.GetComponent<AudioManager>().volume) / 100)) * .4f);
-            AudioSource.PlayClipAtPoint(gm.GetComponent<AudioManager>().negativePickupSound, c.transform.position, (1-(Math.Abs(gm.GetComponent<AudioManager>().volume) / 100)) * .1f);
+            //Debug.Log("pickup audio" + (1 - (Math.Abs(gm.GetComponent<AudioManager>().volume) / 100)) * .4f);
+            AudioSource.PlayClipAtPoint(gm.GetComponent<AudioManager>().negativePickupSound, c.transform.position, gm.GetComponent<AudioManager>().volume);
             //gm.GetComponent<AdjustGravity>().DecreaseGravity();
             gm.GetComponent<ScoringSystem>().currentScore++;
             Destroy(gameObject);
