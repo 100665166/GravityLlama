@@ -137,7 +137,8 @@ public class Player : MonoBehaviour
         if (c.gameObject.tag == "TerrainWall")
         {
             //Debug.Log("Llama is on the ground.");
-            IsGrounded = true;
+            isJumping = false;
+            isGrounded = true;
         }
     }
 
@@ -149,7 +150,7 @@ public class Player : MonoBehaviour
         if (c.gameObject.tag == "TerrainWall")
         {
             //Debug.Log("Llama is in the air.");
-            IsGrounded = false;
+            isGrounded = false;
         }
     }
 
@@ -161,10 +162,10 @@ public class Player : MonoBehaviour
     // Returns: Nothing
     public void Jump()
     {
-        if (IsGrounded)
+        if (isGrounded)
         {
             rb.AddForce(Vector3.up * jumpStrength);
-            if (IsLowGravity)
+            if (isLowGravity)
             {
                 // Need a very strong jump on low gravity levels
                 rb.AddForce(Vector3.up * (jumpStrength * 3));
@@ -192,7 +193,24 @@ public class Player : MonoBehaviour
             }*/
 
             // Technically not needed but for safety, this will prevent any further jumping until we land
-            IsGrounded = false;
+            isJumping = true;
+            isGrounded = false;
+        }
+        // For whenever the llama is being pulled back to the ground
+        else if (isBeingDragged && !isJumping)  // Don't allow double jumping, of course
+        {
+            rb.AddForce(Vector3.up * jumpStrength);
+            if (isLowGravity)
+            {
+                // Need a very strong jump on low gravity levels
+                rb.AddForce(Vector3.up * (jumpStrength * 3));
+            }
+            else if (gm.GetComponent<GravityLevel>().SetGravityLevel < 2)
+            {
+                rb.AddForce(Vector3.up * jumpStrength);
+            }
+            isJumping = true;
+            isGrounded = false;
         }
     }
 
